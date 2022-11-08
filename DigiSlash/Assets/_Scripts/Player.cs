@@ -8,21 +8,31 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private float _speed = 4.5f;
-
+    [SerializeField]
+    private float _hitPoint = 1000f;
+    [SerializeField]
+    private Transform _firePos;
+    [SerializeField]
+    private GameObject _bulletPrefab;
+    [SerializeField]
+    private float _bulletForce = 20f;
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = new Vector3(0, 0, 0);
-
-
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         CalculateMovement();
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
    
     }
 
@@ -59,6 +69,13 @@ public class Player : MonoBehaviour
         {
             transform.position = new Vector3(-7.5f,transform.position.y, 0);
         }
+    }
+
+    void Shoot()
+    {
+        GameObject bullet = Instantiate(_bulletPrefab, _firePos.position, _firePos.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(_firePos.right * _bulletForce, ForceMode2D.Impulse);
     }
 
 }

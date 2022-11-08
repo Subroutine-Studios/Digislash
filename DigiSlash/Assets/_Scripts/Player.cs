@@ -51,13 +51,13 @@ public class Player : MonoBehaviour
 
         //  left and right bounds
 
-        if (transform.position.x >= 11f)
+        if (transform.position.x >= 7.5f)
         {
-            transform.position = new Vector3(11f, transform.position.y, 0);
+            transform.position = new Vector3(7.5f, transform.position.y, 0);
         }
-        else if (transform.position.x <= -11f)
+        else if (transform.position.x <= -7.5f)
         {
-            transform.position = new Vector3(-11f,transform.position.y, 0);
+            transform.position = new Vector3(-7.5f,transform.position.y, 0);
         }
     }
 

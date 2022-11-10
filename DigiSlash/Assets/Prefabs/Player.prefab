@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731990395839751913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16, y: 0.0007, z: -0.0120226415}
+  m_LocalPosition: {x: 0.16, y: 0.0007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -132,6 +132,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4.5
+  _hitPoint: 1000
+  _firePos: {fileID: 731990395839751913}
+  _bulletPrefab: {fileID: 231403928987396763, guid: 6de77903999ae0b45982ff043caf38dd, type: 3}
+  _bulletForce: 20
+  _rb: {fileID: -3967986430270427672}
+  _cam: {fileID: 0}
 --- !u!50 &-3967986430270427672
 Rigidbody2D:
   serializedVersion: 4
@@ -148,7 +154,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8eff0dd21617f934095bc9c35233bbd8, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

@@ -108,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1756434793, guid: 1ac463507e2acb141b58c620ad5a60a8, type: 3}
+  m_Sprite: {fileID: 1508907044, guid: 52bf4fa0e774d294f9e4d4c9e3559b15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,6 +132,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4.5
+  _hitPoint: 1000
+  _firePos: {fileID: 0}
+  _bulletPrefab: {fileID: 0}
+  _bulletForce: 20
 --- !u!50 &-3967986430270427672
 Rigidbody2D:
   serializedVersion: 4
@@ -170,7 +174,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.296875, y: 0.46875}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 0.296875, y: 0.46875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

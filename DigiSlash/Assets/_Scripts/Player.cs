@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         transform.position = new Vector3(0, 0, 0);
-        
+
     }
 
     // Update is for other calculations
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         {
             Shoot();
         }
-   
+
     }
 
 
@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
 
             //Switch the fire position to the left side
             _firePos.transform.position = transform.position + new Vector3(-0.16f, 0.0007f, 0f);
-            
+
             //If fireposition had a sprite model (Ex. gun)
             //_firePos.GetComponent<SpriteRenderer>().flipX = true;
         }
@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
 
             //Switch the fire position to the right side
             _firePos.transform.position = transform.position + new Vector3(0.16f, 0.0007f, 0f);
-            
+
             //If fireposition had a sprite model (Ex. gun)
             //_firePos.GetComponent<SpriteRenderer>().flipX = false;
         }

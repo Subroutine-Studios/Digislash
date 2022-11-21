@@ -57,7 +57,8 @@ public class Player : MonoBehaviour
         // moving one meter per second
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
 
-        transform.Translate(direction * Time.deltaTime * _speed);
+        //transform.Translate(direction * Time.deltaTime * _speed);
+        _rb.velocity = direction * Time.fixedDeltaTime * _speed;
 
 
         // up and down bounds

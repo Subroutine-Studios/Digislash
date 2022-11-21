@@ -3,7 +3,6 @@ using UnityEngine;
 [SerializeField]
 public class Weapon : MonoBehaviour
 {
-
     public string bullet;
     public string bulletSubType;
 
@@ -12,9 +11,6 @@ public class Weapon : MonoBehaviour
     public float bulletForce;
 
     public GameObject prefab;
-
-
-
 
 }
 

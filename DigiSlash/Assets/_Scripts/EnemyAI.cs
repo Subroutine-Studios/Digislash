@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
 
 
-    [SerializeField] private float _health = 3f;
+    [SerializeField] public float health = 100f;
 
     [SerializeField] private AIDestinationSetter _AIDestinationTarget;
 
@@ -31,5 +31,10 @@ public class EnemyAI : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         else
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

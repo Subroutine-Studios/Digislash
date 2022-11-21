@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     private float bulletDmg;
     [SerializeField]
     private GameObject explosion;
+    [SerializeField]
+    private float _damage;
     private GameObject trail;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,8 +18,14 @@ public class Bullet : MonoBehaviour
         {
             if(explosion)
                 Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+
+            if (collision.gameObject.tag == "Enemy")
+            {
+                collision.GetComponent<EnemyAI>().health -= _damage;
+            }
             Destroy(gameObject);
         }
+
             
     }
 }

@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 931069503}
   m_Layer: 0
   m_Name: WeaponList
-  m_TagString: Untagged
+  m_TagString: WeaponList
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -805,6 +805,10 @@ PrefabInstance:
       objectReference: {fileID: 1528412017}
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 873315172}
+    - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
+      propertyPath: _weapons.Array.data[2]
       value: 
       objectReference: {fileID: 873315172}
     m_RemovedComponents:

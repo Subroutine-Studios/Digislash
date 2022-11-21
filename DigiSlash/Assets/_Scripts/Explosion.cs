@@ -6,6 +6,9 @@ public class Explosion : MonoBehaviour
 {
     [SerializeField]
     private float _decayTime = 0.1f;
+    [SerializeField]
+    private float _damage = 60f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +21,19 @@ public class Explosion : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.GetComponent<EnemyAI>().health -= _damage;
+        }
+
+    }
+
     IEnumerator Decay(float decayTime)
     {
         yield return new WaitForSeconds(decayTime);
         Destroy(gameObject);
     }
+
 }

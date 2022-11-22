@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float health = 200f;
 
 
     [SerializeField]
@@ -33,7 +34,6 @@ public class Player : MonoBehaviour
     {
         transform.position = new Vector3(0, 0, 0);
         _currentWeapon = _weapons[0];
-
     }
 
     // Update is for other calculations

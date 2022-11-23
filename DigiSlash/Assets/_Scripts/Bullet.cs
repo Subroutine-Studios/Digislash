@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
 
             if (collision.gameObject.tag == "Enemy")
             {
-                //collision.GetComponent<EnemyAI>().health -= _damage;
+                //collision.GetComponent<Trespasser>()._health -= _damage;
             }
             Destroy(gameObject);
         }

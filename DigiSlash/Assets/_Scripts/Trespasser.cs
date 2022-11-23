@@ -20,11 +20,18 @@ public class Trespasser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (_health < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    void Attack()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.gameObject.tag == "Bullet")
+        {
+            _health -= 5f;
+        }
+        Destroy(gameObject);
     }
 }

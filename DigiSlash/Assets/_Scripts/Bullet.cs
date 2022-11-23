@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     private GameObject explosion;
     [SerializeField]
     private float _damage;
+
+    [SerializeField]
     private GameObject trail;
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool _canShoot = true;
 
+    private float _cooldown = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,9 @@ public class Player : MonoBehaviour
             if (_weaponIndex >= _weapons.Length) _weaponIndex = 0;
             _currentWeapon = _weapons[_weaponIndex];
         }
+
+        if (_cooldown < 2)
+            _cooldown += Time.deltaTime;
 
     }
 
@@ -146,6 +151,37 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         _canShoot = true;
+    }
+
+    public IEnumerator CooldownEffect()
+    {
+        //hit.Play();
+
+        while (_cooldown < 2 && health > 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 0);
+            //firePoint.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 0);
+            //Debug.Log("Yes");
+            yield return new WaitForSeconds(0.2f);
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1);
+            //firePoint.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1);
+            //Debug.Log("No");
+            yield return new WaitForSeconds(0.2f);
+        }
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1);
+        //firePoint.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            _cooldown = 0;
+            StartCoroutine(CooldownEffect());
+        }
+
+
     }
 
 }

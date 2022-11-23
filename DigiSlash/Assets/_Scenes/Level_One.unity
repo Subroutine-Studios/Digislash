@@ -391,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: Rocket
   bulletSubType: Nuclear
-  shootDelay: 1.5
+  shootDelay: 1.2
   bulletForce: 8
   prefab: {fileID: 231403928987396763, guid: bbad21373d7d74a4fb1b1ec385e35fb8, type: 3}
 --- !u!1 &307406024
@@ -607,6 +607,14 @@ PrefabInstance:
       objectReference: {fileID: 443457909}
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 255784566}
+    - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
+      propertyPath: _weapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 255784566}
+    - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
+      propertyPath: _weapons.Array.data[3]
       value: 
       objectReference: {fileID: 255784566}
     - target: {fileID: 8554171654745379439, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}

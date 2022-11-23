@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9157620225047215187}
+  - component: {fileID: 4827819107727202401}
   m_Layer: 0
   m_Name: Firepos
   m_TagString: Untagged
@@ -31,6 +32,27 @@ Transform:
   m_Father: {fileID: 7905790047762479762}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &4827819107727202401
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7700978456978573928}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8554171654745379435
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,10 +65,12 @@ GameObject:
   - component: {fileID: -3967986430270427672}
   - component: {fileID: 8554171654745379436}
   - component: {fileID: 8554171654745379439}
+  - component: {fileID: 8327145522152290429}
   - component: {fileID: 8554171654745379438}
+  - component: {fileID: 9214756712184175587}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +111,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8554171654745379436
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -98,7 +122,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.027785659, y: -0.009261906}
@@ -152,8 +176,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1374749091
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 26b3840330e19c04984c40bc539e6201, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -166,6 +190,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &8327145522152290429
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554171654745379435}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01, y: -0.15}
+  m_Size: {x: 0.5, y: 0.6}
+  m_Direction: 0
 --- !u!114 &8554171654745379438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,10 +218,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071ec14acf088e741a965d93703834e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4.5
+  health: 200
+  _speed: 200
   _hitPoint: 1000
   _firePos: {fileID: 7700978456978573928}
-  _bulletPrefab: {fileID: 231403928987396763, guid: 6de77903999ae0b45982ff043caf38dd, type: 3}
-  _bulletForce: 20
   _rb: {fileID: -3967986430270427672}
   _cam: {fileID: 0}
+  _weapons: []
+  _currentWeapon: {fileID: 0}
+  _canShoot: 1
+--- !u!114 &9214756712184175587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554171654745379435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee195a3d88771b42b78662d2b51901c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: 
+  bulletSubType: 
+  shootDelay: 0
+  bulletForce: 0
+  prefab: {fileID: 0}

@@ -3,25 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyTracing : MonoBehaviour
 {
 
-    [SerializeField] private Transform _target;
-
+    public Transform _target;
 
     [SerializeField] private Rigidbody2D _rb;
 
-
-    [SerializeField] private float _health = 3f;
-
-    [SerializeField] private AIDestinationSetter _AIDestinationTarget;
+    public AIDestinationSetter _AIDestinationTarget;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _AIDestinationTarget.target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        _target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
     }
 
     // Update is called once per frame

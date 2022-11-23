@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float health = 200f;
 
 
     [SerializeField]
@@ -13,21 +14,26 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _firePos;
     [SerializeField]
-    private GameObject _bulletPrefab;
-    [SerializeField]
-    private float _bulletForce = 20f;
-    [SerializeField]
     private Rigidbody2D _rb;
 
     private Vector2 mousePos;
     [SerializeField]
     private Camera _cam;
 
+    [SerializeField]
+    private Weapon[] _weapons;
+    [SerializeField]
+    private Weapon _currentWeapon;
+    private int _weaponIndex = 0;
+
+    [SerializeField]
+    private bool _canShoot = true;
+
     // Start is called before the first frame update
     void Start()
     {
         transform.position = new Vector3(0, 0, 0);
-
+        _currentWeapon = _weapons[0];
     }
 
     // Update is for other calculations
@@ -39,9 +45,18 @@ public class Player : MonoBehaviour
         CalculateMovement();
         CalculateAim();
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1") && _canShoot)
         {
             Shoot();
+            _canShoot = false;
+            StartCoroutine(ShotTimer(_currentWeapon.shootDelay));
+        }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            _weaponIndex++;
+            if (_weaponIndex >= _weapons.Length) _weaponIndex = 0;
+            _currentWeapon = _weapons[_weaponIndex];
         }
 
     }
@@ -57,7 +72,8 @@ public class Player : MonoBehaviour
         // moving one meter per second
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
 
-        transform.Translate(direction * Time.deltaTime * _speed);
+        //transform.Translate(direction * Time.deltaTime * _speed);
+        _rb.velocity = direction * Time.fixedDeltaTime * _speed;
 
 
         // up and down bounds
@@ -121,9 +137,15 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(_bulletPrefab, _firePos.transform.position, _firePos.transform.rotation);
+        GameObject bullet = Instantiate(_currentWeapon.prefab, _firePos.transform.position, _firePos.transform.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(_firePos.transform.up * _bulletForce, ForceMode2D.Impulse);
+        rb.AddForce(_firePos.transform.up * _currentWeapon.bulletForce, ForceMode2D.Impulse);
+    }
+
+    IEnumerator ShotTimer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _canShoot = true;
     }
 
 }

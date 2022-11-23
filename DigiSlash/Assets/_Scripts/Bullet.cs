@@ -4,9 +4,28 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    private float bulletDmg;
+    [SerializeField]
+    private GameObject explosion;
+    [SerializeField]
+    private float _damage;
+    private GameObject trail;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag != "Player")
-            Destroy(this.gameObject);
+        {
+            if(explosion)
+                Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+
+            if (collision.gameObject.tag == "Enemy")
+            {
+                //collision.GetComponent<EnemyAI>().health -= _damage;
+            }
+            Destroy(gameObject);
+        }
+
+            
     }
 }

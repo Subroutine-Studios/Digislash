@@ -25,7 +25,7 @@ public class Explosion : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.GetComponent<EnemyAI>().health -= _damage;
+            //collision.GetComponent<EnemyTracing>().health -= _damage;
         }
 
     }

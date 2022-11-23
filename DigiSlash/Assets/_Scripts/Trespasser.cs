@@ -32,6 +32,5 @@ public class Trespasser : MonoBehaviour
         {
             _health -= 5f;
         }
-        Destroy(gameObject);
     }
 }

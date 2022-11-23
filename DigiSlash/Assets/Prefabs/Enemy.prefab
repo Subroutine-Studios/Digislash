@@ -126,7 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _rb: {fileID: 5523168858455514454}
-  health: 100
   _AIDestinationTarget: {fileID: 4724170639443615036}
 --- !u!114 &4724170639443615036
 MonoBehaviour:
@@ -241,3 +240,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyTracer: {fileID: -308093225303561697}
+  _health: 40

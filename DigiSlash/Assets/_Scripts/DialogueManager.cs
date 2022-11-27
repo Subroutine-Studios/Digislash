@@ -79,7 +79,19 @@ public class DialogueManager : MonoBehaviour
 
     public void NextSentence()
     {
+        //Comment out when event manager manages these
+        _dialogueBox.SetActive(true);
+        if (_dialogue.dialogueScenes[_sceneIndex].highlight)
+        {
+            _dialogue.dialogueScenes[_sceneIndex].highlight.SetActive(true);
+        }
+
+
+
+
         _continueText.SetActive(false);
+
+
         done = false;
         _textDisplay = "";
 
@@ -87,20 +99,42 @@ public class DialogueManager : MonoBehaviour
         {
             _sentenceIndex++;
             _currentSentence = _dialogue.dialogueScenes[_sceneIndex].sentences[_sentenceIndex];
-            //soundEffect.time = timef;
-            //soundEffect.Play();
             StartCoroutine(Type());
         }
 
         else
         {
+            _dialogueBox.SetActive(false);
+            if (_dialogue.dialogueScenes[_sceneIndex].highlight)
+            {
+                _dialogue.dialogueScenes[_sceneIndex].highlight.SetActive(false);
+            }
+
             _sentenceIndex = -1;
             _sceneIndex++;
+
+            //Comment out when event manager manages these
+            if(_sceneIndex < _dialogue.dialogueScenes.Length)
+                _numSentences = _dialogue.dialogueScenes[_sceneIndex].sentences.Length;
+
             done = true;
-            _dialogueBox.SetActive(false);
+
+            
+
+            
+
+            //Comment out when event manager manages these
+            StartCoroutine(WaitOneSecond());
 
 
         }
+
+    }
+
+    private IEnumerator WaitOneSecond()
+    {
+        yield return new WaitForSeconds(1f);
+        NextSentence();
 
     }
 

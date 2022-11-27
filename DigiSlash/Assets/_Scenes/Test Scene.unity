@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 2, y: 15}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &65311627
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -745,6 +745,13 @@ MonoBehaviour:
     - Your mission is to protect the gate against viruses.
     - Let's start with the basics.
     highlight: {fileID: 0}
+  - _sceneName: Build Phase Weapon
+    sentences:
+    - This is your weapon.
+    - Your weapon may have different bullets which do various things.
+    - For now, we'll keep it simple.
+    - Your weapon shoots bullets that creates shrapnel upon impact that deals damage.
+    highlight: {fileID: 2062316809}
 --- !u!114 &979976313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1466,8 +1473,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1771,7 +1778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2062316810
 RectTransform:
   m_ObjectHideFlags: 0

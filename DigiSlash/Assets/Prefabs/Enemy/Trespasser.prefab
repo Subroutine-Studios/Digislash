@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -5791396876266228298}
   - component: {fileID: 6063232840228892019}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Trespasser
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

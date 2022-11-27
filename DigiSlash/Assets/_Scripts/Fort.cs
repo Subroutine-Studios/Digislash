@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Fort : MonoBehaviour
 {
-    [SerializeField]
-    private float _leaks = 10f;
+    public float _leaks = 10f; // fort HP
 
     // Start is called before the first frame update
     void Start()

@@ -17,4 +17,18 @@ public class Fort : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            StartCoroutine(DamageOverTime());
+        }
+    }
+
+    IEnumerator DamageOverTime()
+    {        
+        _leaks -= 2f;
+        yield return new WaitForSeconds(10f);
+    }
 }

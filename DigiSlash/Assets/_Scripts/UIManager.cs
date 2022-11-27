@@ -6,17 +6,33 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
 
-
+    
     public Fort fortHealth;
     public Image fortFillImage;
     public Slider fortSlider;
 
-    public Player playerHealth;
+    public Player player;
     public Image playerFillImage;
     public Slider playerSlider;
 
-    void Awake()
+
+    // weapon switch labels
+
+    public Text weap1Txt;
+    public Text weap2Txt;
+    public Text weap1Subtype1Txt;
+    public Text weap1Subtype2Txt;
+    public Text weap2Subtype1Txt;
+    public Text weap2Subtype2Txt;
+
+
+
+
+
+
+    void Start()
     {
+        // Set weapon labels
 
 
     }
@@ -27,7 +43,37 @@ public class UIManager : MonoBehaviour
 
         updateFortHp();
         updatePlayerHp();
+
+        // get current weapon
+        // weawpon index 0 - bullet ; 1 - rocket
+        
+       
+
+        if (player._weaponIndex == 0)
+        {
+            // highlight bullet
+            weap1Txt.color = new Color32(255, 255, 255, 255);
+            weap2Txt.color = new Color32(255, 255, 255, 70);
+
+
+        }
+        else if(player._weaponIndex == 1)
+        {
+
+            // highlight rocket
+            weap2Txt.color = new Color32(255, 255, 255, 255);
+            weap1Txt.color = new Color32(255, 255, 255, 70); 
+
+
+
+        }
+
+
+
+
+
     }
+
 
 
     void updateFortHp()
@@ -72,7 +118,7 @@ public class UIManager : MonoBehaviour
         }
 
 
-        float fillValue = playerHealth.health / 200f; // player current health/ player max health
+        float fillValue = player.health / 200f; // player current health/ player max health
 
         if (fillValue <= playerSlider.maxValue / 3)
         {

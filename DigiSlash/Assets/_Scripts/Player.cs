@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     private Weapon[] _weapons;
     [SerializeField]
     private Weapon _currentWeapon;
-    private int _weaponIndex = 0;
+    public int _weaponIndex = 0;
 
     [SerializeField]
     private bool _canShoot = true;

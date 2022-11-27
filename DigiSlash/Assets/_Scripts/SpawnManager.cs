@@ -70,11 +70,6 @@ public class SpawnManager : MonoBehaviour
         }
         
             yield return new WaitForSeconds(5.0f);
-<<<<<<< Updated upstream
-=======
-
-            // will never get here
->>>>>>> Stashed changes
         }
 
 

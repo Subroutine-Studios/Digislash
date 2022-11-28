@@ -4,73 +4,66 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    [System.Serializable]
+    public class Waves
+    {
+        public int _enemiesToSpawn = 14;
+        public float spawnDelay = 3f;
+    }
+
+    [SerializeField]
+    private Waves[] _waves;
+
 
     [SerializeField]
     private GameObject _enemyPrefab;
     [SerializeField]
     private GameObject _enemyContainer;
 
-    private WaveManager _waveManager;
+    [SerializeField]
+    private bool _stopSpawning = true;
 
-    private bool _stopSpawning = false;
+    public int currentWave = 0;
+
+
+    public int enemiesLeft = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-    }
-
-    public void StartSpawning()
-    {
         StartCoroutine(SpawnEnemyRoutine());
     }
 
+    private void Update()
+    {
+        enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
+    }
 
-    IEnumerator SpawnEnemyRoutine()
+
+    public IEnumerator SpawnEnemyRoutine()
     {
         int enemiesSpawned = 0;
 
-        yield return new WaitForSeconds(3.0f); // wait 3 seconds before spawning
 
         // while <???>, keep spawning enemies
-        while (_stopSpawning == false && _waveManager.currentWave < 4)
+        while (_stopSpawning == false && currentWave < 3)
         {
-            if (enemiesSpawned != _waveManager.enemiesToSpawn)
+            if (enemiesSpawned != _waves[currentWave]._enemiesToSpawn)
             {
-                switch (_waveManager.currentWave)
-                {
-                    // Wave 1
-                    case 1:
-                        Vector3 posToSpawn = new Vector3(Random.Range(-2f, 2f), -6, 0); // position to spawn (x,y,z)
-                        GameObject newEnemy = Instantiate(_enemyPrefab, posToSpawn, Quaternion.identity);
-                        newEnemy.transform.parent = _enemyContainer.transform;
-
-                        _waveManager.enemiesLeft++;
-                        enemiesSpawned++;
-                        break;
-
-                    // Wave 2
-                    case 2:
-                        _waveManager.enemiesLeft++;
-                        enemiesSpawned++;
-                        break;
-
-                    // Wave 3
-                    case 3:
-                        _waveManager.enemiesLeft++;
-                        enemiesSpawned++;
-                        break;
-                }
+                Vector3 posToSpawn = new Vector3(Random.Range(-2f, 2f), -6, 0); // position to spawn (x,y,z)
+                GameObject newEnemy = Instantiate(_enemyPrefab, posToSpawn, Quaternion.identity);
+                newEnemy.transform.parent = _enemyContainer.transform;
+                enemiesSpawned++;
+                yield return new WaitForSeconds(_waves[currentWave].spawnDelay); // wait n seconds before spawning
+                       
             }
             else
             {
-                _waveManager.startOfWave = false;
-                enemiesSpawned = 0;
                 _stopSpawning = true;
             }
         }
         
-            yield return new WaitForSeconds(5.0f);
-        }
+    }
 
 
 

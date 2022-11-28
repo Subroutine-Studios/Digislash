@@ -6,11 +6,14 @@ using Pathfinding;
 public class EnemyTracing : MonoBehaviour
 {
 
+
     public Transform _target;
 
     [SerializeField] private Rigidbody2D _rb;
 
     public AIDestinationSetter _AIDestinationTarget;
+
+    public float attackCooldown = 0f;
 
 
     // Start is called before the first frame update
@@ -26,5 +29,10 @@ public class EnemyTracing : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         else
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
+
+        if(attackCooldown < 5f)
+        {
+            attackCooldown += Time.deltaTime;
+        }
     }
 }

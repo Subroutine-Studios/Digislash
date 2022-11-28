@@ -6,9 +6,7 @@ public class Trespasser : MonoBehaviour
 {
     [SerializeField]
     private EnemyTracing _enemyTracer;
-
-    [SerializeField]
-    private float _health = 40f;
+    public float _health = 40f;
 
     // Start is called before the first frame update
     void Start()

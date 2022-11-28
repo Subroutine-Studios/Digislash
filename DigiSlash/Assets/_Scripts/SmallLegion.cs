@@ -5,10 +5,9 @@ using UnityEngine;
 public class SmallLegion : MonoBehaviour
 {
     [SerializeField]
-    private EnemyTracing _enemyTracer;
-
-    [SerializeField]
-    private float _health = 60f;
+    private EnemyTracing _enemyTracer; 
+    
+    public float _health = 60f;
 
     // Start is called before the first frame update
     void Start()

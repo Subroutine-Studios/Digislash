@@ -5,10 +5,9 @@ using UnityEngine;
 public class Worm : MonoBehaviour
 {
     [SerializeField]
-    private EnemyTracing _enemyTracer;
-
-    [SerializeField]
-    private float _health = 0f;
+    private EnemyTracing _enemyTracer; 
+    
+    public float _health = 0f;
 
     // Start is called before the first frame update
     void Start()

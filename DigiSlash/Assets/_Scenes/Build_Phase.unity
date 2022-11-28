@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 105057193}
   - component: {fileID: 105057192}
   - component: {fileID: 105057191}
+  - component: {fileID: 105057194}
   m_Layer: 5
   m_Name: Weapon_Switch_2_btn
   m_TagString: Untagged
@@ -286,7 +287,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 105057192}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 105057194}
+        m_TargetAssemblyTypeName: BuildPhase, Assembly-CSharp
+        m_MethodName: weap2BtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &105057192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +338,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105057189}
   m_CullTransparentMesh: 1
+--- !u!114 &105057194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105057189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff76f14f861ab142a67fe17e6614c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _proceedBtn: {fileID: 0}
+  _bulletBtn: {fileID: 435902716}
+  _rocketBtn: {fileID: 1763213581}
+  _stickyBtn: {fileID: 401264887}
+  _multiShotBtn: {fileID: 1639607150}
+  _ricochetBtn: {fileID: 1825744309}
+  _warpedBtn: {fileID: 906542618}
+  _doubleEdgeBtn: {fileID: 1094786858}
+  _rapidFireBtn: {fileID: 1320251610}
+  _heavyBtn: {fileID: 113350706}
+  _overClockedBtn: {fileID: 2040060600}
+  _weap1Btn: {fileID: 965194706}
+  _weap2Btn: {fileID: 105057189}
+  _fcBulletTypeText: {fileID: 29226995}
+  _fcSubTypeText: {fileID: 1613436260}
+  _fcBaseDmgText: {fileID: 2063585485}
+  _fcRpsText: {fileID: 1275811725}
+  _traitDescText: {fileID: 1094112182}
 --- !u!1 &105410246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2694,6 +2737,7 @@ GameObject:
   - component: {fileID: 965194710}
   - component: {fileID: 965194709}
   - component: {fileID: 965194708}
+  - component: {fileID: 965194711}
   m_Layer: 5
   m_Name: Weapon_Switch_1_btn
   m_TagString: Untagged
@@ -2765,7 +2809,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 965194709}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 965194711}
+        m_TargetAssemblyTypeName: BuildPhase, Assembly-CSharp
+        m_MethodName: weap1BtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &965194709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2804,6 +2860,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965194706}
   m_CullTransparentMesh: 1
+--- !u!114 &965194711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965194706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff76f14f861ab142a67fe17e6614c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _proceedBtn: {fileID: 0}
+  _bulletBtn: {fileID: 435902716}
+  _rocketBtn: {fileID: 1763213581}
+  _stickyBtn: {fileID: 401264887}
+  _multiShotBtn: {fileID: 1639607150}
+  _ricochetBtn: {fileID: 1825744309}
+  _warpedBtn: {fileID: 906542618}
+  _doubleEdgeBtn: {fileID: 1094786858}
+  _rapidFireBtn: {fileID: 1320251610}
+  _heavyBtn: {fileID: 113350706}
+  _overClockedBtn: {fileID: 2040060600}
+  _weap1Btn: {fileID: 965194706}
+  _weap2Btn: {fileID: 105057189}
+  _fcBulletTypeText: {fileID: 29226995}
+  _fcSubTypeText: {fileID: 1613436260}
+  _fcBaseDmgText: {fileID: 2063585485}
+  _fcRpsText: {fileID: 1275811725}
+  _traitDescText: {fileID: 1094112182}
 --- !u!1 &969735859
 GameObject:
   m_ObjectHideFlags: 0
@@ -6029,7 +6115,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 733009670}
   m_HandleRect: {fileID: 733009669}
   m_Direction: 2
-  m_Value: 0.50000006
+  m_Value: 0.49999988
   m_Size: 0.41666666
   m_NumberOfSteps: 0
   m_OnValueChanged:

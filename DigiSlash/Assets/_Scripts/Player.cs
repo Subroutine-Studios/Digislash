@@ -38,6 +38,13 @@ public class Player : MonoBehaviour
         _currentWeapon = _weapons[0];
     }
 
+    void Awake()
+    {
+        //  _weapons = Build_Phase.buildPhaseScene._weapons;
+      // _weapons = BuildPhase._weapons;
+
+    }
+
     // Update is for other calculations
     void Update()
     {

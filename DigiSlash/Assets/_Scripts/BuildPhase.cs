@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class BuildPhase : MonoBehaviour
 {
 
+    // scene reference
+    public static BuildPhase buildPhaseScene;
+
     //proceed button
     public GameObject _proceedBtn;
 
@@ -46,6 +49,53 @@ public class BuildPhase : MonoBehaviour
     public Text _traitDescText;
 
 
+    // Store values
+    public static Weapon[] _weapons;
+
+    public static int _selectedWeap; // 0 is Weap 1 , 1 is Weap 2
+
+
+    // player
+
+    private Player _player;
+
+
+    void Start()
+    {
+        // Weapon 1 is selected by default
+        _selectedWeap = 0;
+
+        _weapons = new Weapon[2];
+
+        _weapons[0] = new Weapon("null", "null", 0, 0);
+        _weapons[1] = new Weapon("null 1", "null 1", 0, 0);
+
+        Debug.Log("Buld phase start: " + _weapons[_selectedWeap].bullet + " selected weapon : " + _selectedWeap);
+
+        buildPhaseScene = this;
+
+      //  _player = GameObject.Find("Player");
+
+       
+
+
+    }
+
+
+
+
+    // Update weapon array values
+    public void updateWeaponList(string bullet, string bulletSubType, string baseDmg, string rps)
+    {
+        _weapons[_selectedWeap].bullet = bullet;
+        _weapons[_selectedWeap].bulletSubType = bulletSubType;
+        _weapons[_selectedWeap].baseDmg = float.Parse(baseDmg);
+        _weapons[_selectedWeap].rps = float.Parse(rps);
+
+    }
+
+
+
     // On Click Methods for Bullet type selection
 
 
@@ -55,7 +105,13 @@ public class BuildPhase : MonoBehaviour
         _fcBulletTypeText.text = "INT";
         _fcSubTypeText.text = "Shrapnel, Tracer";
         _fcBaseDmgText.text = "12";
-        _fcRpsText.text = "10";
+        _fcRpsText.text = "10 " ;
+
+        updateWeaponList("INT", "Shrapnel, Tracer", "12", "10");
+
+
+      //  Debug.Log("BUTTON CLICK : Values of array weapon : "+ " weap # " + _selectedWeap + _weapons[_selectedWeap].bullet);
+
 
     }
 
@@ -67,6 +123,8 @@ public class BuildPhase : MonoBehaviour
         _fcBaseDmgText.text = "60";
         _fcRpsText.text = "1";
 
+        updateWeaponList("FL", "Nuclear, Napalm", "60", "1");
+
     }
 
     public void stickyBtnClick()
@@ -76,6 +134,8 @@ public class BuildPhase : MonoBehaviour
         _fcSubTypeText.text = "Plague, Singularity";
         _fcBaseDmgText.text = "30";
         _fcRpsText.text = "4";
+
+        updateWeaponList("STR", "Plague, Singularity", "30", "4");
 
     }
 
@@ -132,17 +192,47 @@ public class BuildPhase : MonoBehaviour
 
 
 
+    // Need to Store 
+
+    //Array 
+    // Weapon 1
+    // Bullet type
+    // Bullet traits []
 
 
-
-
-    void Update ()
+    public void weap1BtnClick()
     {
-        // check weapon number
+        _selectedWeap = 0;
 
+        updateFunctionScreen();
 
     }
 
-   
+    public void weap2BtnClick()
+    {
+        _selectedWeap = 1;
+        updateFunctionScreen();
+
+
+ 
+    }
+
+
+    public void updateFunctionScreen()
+    {
+        _fcBulletTypeText.text = _weapons[_selectedWeap].bullet;
+        _fcSubTypeText.text = _weapons[_selectedWeap].bulletSubType;
+        _fcBaseDmgText.text = _weapons[_selectedWeap].baseDmg.ToString();
+        _fcRpsText.text = _weapons[_selectedWeap].rps.ToString();
+    }
+
+
+
+
+
+
+
+
+
 
 }

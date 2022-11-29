@@ -43,24 +43,27 @@ public class DialogueManager : MonoBehaviour
         _continueText.SetActive(false);
         done = false;
 
-
-
+        //IMPORTANT
+        //IMPORTANT
+        //IMPORTANT: Remove this when game manager manages the dialogue scenes
         NextSentence();
     }
 
     void Update()
     {
+        //Show that you can press "ENTER" if display finished the sentence
         if (_textDisplay == _currentSentence)
         {
             _continueText.SetActive(true);
         }
 
+        //If user presses ENTER when it shows "ENTER", go to the next sentence
         if (Input.GetKeyDown(KeyCode.Return) && _continueText.activeSelf)
         {
             NextSentence();
         }
 
-
+        //The text object will display the sentence that is forming
         _textObj.text = _textDisplay;
 
 
@@ -68,6 +71,7 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator Type()
     {
+        //Slowly form the sentence, store the in-progress sentence in _textDisplay
         soundEffect.Play();
         foreach (char letter in _currentSentence.ToCharArray())
         {
@@ -77,24 +81,29 @@ public class DialogueManager : MonoBehaviour
         soundEffect.Stop();
     }
 
+    //IMPORTANT
+    //IMPORTANT
+    //IMPORTANT: Game manager should call this function when the next scene should play
     public void NextSentence()
     {
-        //Comment out when event manager manages these
+        //Show the dialogue box
         _dialogueBox.SetActive(true);
+
+        //Show the spotlight if there is one
         if (_dialogue.dialogueScenes[_sceneIndex].highlight)
         {
             _dialogue.dialogueScenes[_sceneIndex].highlight.SetActive(true);
         }
 
-
-
-
+        //The "ENTER" text at the bottom right should not be visible yet
         _continueText.SetActive(false);
 
 
         done = false;
+        //Current display is empty while it readies up to form the sentence
         _textDisplay = "";
 
+        //If there are still more sentences in the dialogue scene, go to the next sentence
         if (_sentenceIndex < _numSentences - 1)
         {
             _sentenceIndex++;
@@ -102,6 +111,7 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(Type());
         }
 
+        //Else, prepare the next dialogue scene
         else
         {
             _dialogueBox.SetActive(false);
@@ -113,17 +123,16 @@ public class DialogueManager : MonoBehaviour
             _sentenceIndex = -1;
             _sceneIndex++;
 
-            //Comment out when event manager manages these
             if(_sceneIndex < _dialogue.dialogueScenes.Length)
                 _numSentences = _dialogue.dialogueScenes[_sceneIndex].sentences.Length;
 
             done = true;
 
-            
 
-            
 
-            //Comment out when event manager manages these
+            //IMPORTANT
+            //IMPORTANT
+            //IMPORTANT: comment this out if you can because the game manager should call NextSentence()
             StartCoroutine(WaitOneSecond());
 
 
@@ -131,11 +140,12 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+
+    //Only use this for testing
     private IEnumerator WaitOneSecond()
     {
         yield return new WaitForSeconds(1f);
         NextSentence();
-
     }
 
 

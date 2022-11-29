@@ -10,6 +10,8 @@ public class Legion : MonoBehaviour
 
     private float _explosionCooldown = 0f;
 
+    private bool dead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +23,9 @@ public class Legion : MonoBehaviour
     void Update()
     {
         //If enemy dies, run Death()
-        if (_health <= 0)
+        if (_health <= 0 && !dead)
         {
+            dead = true;
             StartCoroutine(Death());
         }
 
@@ -58,11 +61,15 @@ public class Legion : MonoBehaviour
     private IEnumerator Death()
     {
         gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
         gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 0);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
         gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
+        yield return new WaitForSeconds(0.15f);
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 0);
+        yield return new WaitForSeconds(0.15f);
         Destroy(gameObject);
     }
 }

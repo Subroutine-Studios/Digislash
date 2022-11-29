@@ -31,20 +31,24 @@ public class SpawnManager : MonoBehaviour
     public bool doneSpawning = true;
 
 
-    public int enemiesLeft = 0;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        //Delele once game manager is good
-        StartCoroutine(SpawnEnemyRoutine());
+        //Delele once game manager is set, game manager should call this
+        //StartCoroutine(SpawnEnemyRoutine());
     }
 
     private void Update()
     {
-        enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        
     }
 
+    public void SpawnEnemies()
+    {
+        StartCoroutine(SpawnEnemyRoutine());
+    }
 
     public IEnumerator SpawnEnemyRoutine()
     {
@@ -53,8 +57,13 @@ public class SpawnManager : MonoBehaviour
         int numLegions = _waves[currentWave].numLegions;
         int numWorms = _waves[currentWave].numWorms;
 
+        Debug.Log("tres: " + _waves[currentWave].numTrespassers);
+        Debug.Log("leg: " + _waves[currentWave].numLegions);
+        Debug.Log("worm: " + _waves[currentWave].numWorms);
+
         //Add different enemies into the list
         List<int> enemiesToBeSpawned = new List<int>();
+
 
         for(int i = 0; i < numTrespassers; i++)
         {
@@ -72,7 +81,12 @@ public class SpawnManager : MonoBehaviour
         }
 
         GameObject enemy;
-        Debug.Log(enemiesToBeSpawned);
+
+        for(int i = 0; i< enemiesToBeSpawned.Count; i++)
+        {
+            Debug.Log(enemiesToBeSpawned[i]);
+        }
+        //Debug.Log(enemiesToBeSpawned);
 
         // while <???>, keep spawning enemies
         while (enemiesToBeSpawned.Count > 0)

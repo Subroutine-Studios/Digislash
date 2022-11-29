@@ -23,7 +23,7 @@ public class Fort : MonoBehaviour
         //If an enemy that is not a trespasser attacks fort after their cooldown ends
         if (collision.tag == "Enemy" && !collision.GetComponent<Trespasser>() && collision.GetComponent<EnemyTracing>().attackCooldown >= 5f)
         {
-            _leaks -= 2f;
+            _leaks -= 1f;
             collision.GetComponent<EnemyTracing>().attackCooldown = 0f;
         }
     }

@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private float _typingSpeed;
 
-    private bool done = false;
+    public bool done = false;
 
 
     [SerializeField]
@@ -46,7 +46,7 @@ public class DialogueManager : MonoBehaviour
         //IMPORTANT
         //IMPORTANT
         //IMPORTANT: Remove this when game manager manages the dialogue scenes
-        NextSentence();
+        //NextSentence();
     }
 
     void Update()
@@ -133,7 +133,7 @@ public class DialogueManager : MonoBehaviour
             //IMPORTANT
             //IMPORTANT
             //IMPORTANT: comment this out if you can because the game manager should call NextSentence()
-            StartCoroutine(WaitOneSecond());
+            //StartCoroutine(WaitOneSecond());
 
 
         }
@@ -142,11 +142,13 @@ public class DialogueManager : MonoBehaviour
 
 
     //Only use this for testing
+    /*
     private IEnumerator WaitOneSecond()
     {
         yield return new WaitForSeconds(1f);
         NextSentence();
     }
+    */
 
 
 }

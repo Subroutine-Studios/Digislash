@@ -13,6 +13,7 @@ public class EnemyTracing : MonoBehaviour
 
     public AIDestinationSetter _AIDestinationTarget;
 
+    //For attacking the gate
     public float attackCooldown = 0f;
 
 
@@ -25,11 +26,13 @@ public class EnemyTracing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Flip sprite based on target position
         if (transform.position.x >= _target.transform.position.x)
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         else
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
+        //Recharge cooldown to attack fort
         if (attackCooldown < 5f)
         {
             attackCooldown += Time.deltaTime;

@@ -20,7 +20,8 @@ public class Fort : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy" && collision.GetComponent<EnemyTracing>().attackCooldown >= 5f)
+        //If an enemy that is not a trespasser attacks fort after their cooldown ends
+        if (collision.tag == "Enemy" && !collision.GetComponent<Trespasser>() && collision.GetComponent<EnemyTracing>().attackCooldown >= 5f)
         {
             _leaks -= 2f;
             collision.GetComponent<EnemyTracing>().attackCooldown = 0f;

@@ -9,12 +9,13 @@ public class GameManager : MonoBehaviour
     private Player _player;
     [SerializeField]
     private Fort _fort;
-    private int round = 1;
-    private int roundMax = 5;
+
     [SerializeField]
     private bool _isGameOver = false;
     [SerializeField]
+
     private bool _isPlayerSuccessful = false; // bool variable to check if player won all waves
+
     private Scene _currentScene;
     // insert UI Manager
 

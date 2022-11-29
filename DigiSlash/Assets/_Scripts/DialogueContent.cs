@@ -9,6 +9,7 @@ public class DialogueContent : MonoBehaviour
     {
         [SerializeField]
         private string _sceneName;
+        [TextArea(3, 5)]
         public string[] sentences;
         public GameObject highlight;
     }

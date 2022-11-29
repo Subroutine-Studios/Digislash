@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private GameObject explosion;
     [SerializeField]
-    private float _damage;
+    public float _damage;
 
     [SerializeField]
     private GameObject trail;

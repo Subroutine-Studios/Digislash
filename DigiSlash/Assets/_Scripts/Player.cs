@@ -10,8 +10,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _speed = 4.5f;
     [SerializeField]
-    private float _hitPoint = 1000f;
-    [SerializeField]
     private GameObject _firePos;
     [SerializeField]
     private Rigidbody2D _rb;
@@ -48,28 +46,35 @@ public class Player : MonoBehaviour
     // Update is for other calculations
     void Update()
     {
-        //Get mouse position
-        mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
-
-        CalculateMovement();
-        CalculateAim();
-
-        if (Input.GetButton("Fire1") && _canShoot)
+        //Allow player functionality as long as player is alive
+        if(health > 0)
         {
-            Shoot();
-            _canShoot = false;
-            StartCoroutine(ShotTimer(_currentWeapon.shootDelay));
+            //Get mouse position
+            mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
+
+
+            CalculateMovement();
+            CalculateAim();
+
+            if (Input.GetButton("Fire1") && _canShoot)
+            {
+                Shoot();
+                _canShoot = false;
+                StartCoroutine(ShotTimer(_currentWeapon.rps));
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                _weaponIndex++;
+                if (_weaponIndex >= _weapons.Length) _weaponIndex = 0;
+                _currentWeapon = _weapons[_weaponIndex];
+            }
+
+            if (_cooldown < 2)
+                _cooldown += Time.deltaTime;
         }
 
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            _weaponIndex++;
-            if (_weaponIndex >= _weapons.Length) _weaponIndex = 0;
-            _currentWeapon = _weapons[_weaponIndex];
-        }
-
-        if (_cooldown < 2)
-            _cooldown += Time.deltaTime;
+        
 
     }
 
@@ -147,6 +152,7 @@ public class Player : MonoBehaviour
         _firePos.GetComponent<Rigidbody2D>().rotation = angle;
     }
 
+    //Shoot bullet based on the weapon and its stats 
     void Shoot()
     {
         GameObject bullet = Instantiate(_currentWeapon.prefab, _firePos.transform.position, _firePos.transform.rotation);
@@ -154,12 +160,15 @@ public class Player : MonoBehaviour
         rb.AddForce(_firePos.transform.up * _currentWeapon.bulletForce, ForceMode2D.Impulse);
     }
 
-    IEnumerator ShotTimer(float delay)
+    //Cooldown for shooting a weapon based on the weapon stats
+    IEnumerator ShotTimer(float rps)
     {
+        float delay = 1f / rps;
         yield return new WaitForSeconds(delay);
         _canShoot = true;
     }
 
+    //When player gets hit, play short blinking animation 
     public IEnumerator CooldownEffect()
     {
         //hit.Play();
@@ -182,9 +191,11 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //If enemy touches a player, take damage and start immunity cooldown
         if (collision.gameObject.tag == "Enemy")
         {
             _cooldown = 0;
+            health -= 20f;
             StartCoroutine(CooldownEffect());
         }
 

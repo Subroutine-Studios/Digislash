@@ -57,7 +57,7 @@ public class Trespasser : MonoBehaviour
     //Enemy turns red then dies shortly after
     private IEnumerator Death()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f);
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 100f);
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }

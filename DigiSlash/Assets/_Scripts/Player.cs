@@ -177,11 +177,9 @@ public class Player : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 0);
             //firePoint.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 0);
-            //Debug.Log("Yes");
             yield return new WaitForSeconds(0.2f);
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1);
             //firePoint.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1);
-            //Debug.Log("No");
             yield return new WaitForSeconds(0.2f);
         }
         gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 1);

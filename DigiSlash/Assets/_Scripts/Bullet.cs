@@ -16,15 +16,18 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag != "Player")
+        //If the bullet hits anything thats not a player or a gate
+        if(collision.gameObject.tag != "Player" && collision.gameObject.tag != "Gate")
         {
             if(explosion)
                 Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
 
+            /* Use only if you want particle effect upon hitting enemy
             if (collision.gameObject.tag == "Enemy")
             {
-                //collision.GetComponent<Trespasser>()._health -= _damage;
+                
             }
+            */
             Destroy(gameObject);
         }
 

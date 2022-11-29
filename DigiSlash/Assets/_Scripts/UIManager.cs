@@ -84,7 +84,7 @@ public class UIManager : MonoBehaviour
             fortFillImage.enabled = false;
         }
 
-        if (fortSlider.value > fortSlider.minValue && !fortFillImage.enabled)
+        else if (fortSlider.value > fortSlider.minValue && !fortFillImage.enabled)
         {
             fortFillImage.enabled = true;
         }

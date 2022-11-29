@@ -58,8 +58,9 @@ MonoBehaviour:
     numWorms: 0
     spawnDelay: 0
   _enemyTrespasser: {fileID: 6705697927570190365, guid: a5945f8db411df043b6e23e5b0d75d63, type: 3}
-  _enemyLegion: {fileID: 4625507496731850451, guid: d56ec56ccd11f1546b2ab4e176b9b9d2, type: 3}
+  _enemyLegion: {fileID: 6705697927570190365, guid: 82f340136a623c943a5402f47dc700e1, type: 3}
   _enemyWorm: {fileID: 4891822083578568492, guid: 8cb6093c13a9fde488aa8fb4abf002e9, type: 3}
-  _enemyContainer: {fileID: 0}
+  _enemyContainer: {fileID: 6705697927570190365, guid: ba1ddf84a5c386f49b72cc0c9e3d3d35, type: 3}
   currentWave: 0
+  doneSpawning: 1
   enemiesLeft: 0

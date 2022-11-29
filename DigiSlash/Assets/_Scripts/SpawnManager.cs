@@ -7,7 +7,9 @@ public class SpawnManager : MonoBehaviour
     [System.Serializable]
     public class Waves
     {
-        public int _enemiesToSpawn = 14;
+        public int numTrespassers = 0;
+        public int numLegions = 0;
+        public int numWorms = 0;
         public float spawnDelay = 3f;
     }
 
@@ -16,12 +18,13 @@ public class SpawnManager : MonoBehaviour
 
 
     [SerializeField]
-    private GameObject _enemyPrefab;
+    private GameObject _enemyTrespasser;
+    [SerializeField]
+    private GameObject _enemyLegion;
+    [SerializeField]
+    private GameObject _enemyWorm;
     [SerializeField]
     private GameObject _enemyContainer;
-
-    [SerializeField]
-    private bool _stopSpawning = true;
 
     public int currentWave = 0;
 
@@ -42,25 +45,49 @@ public class SpawnManager : MonoBehaviour
 
     public IEnumerator SpawnEnemyRoutine()
     {
-        int enemiesSpawned = 0;
+        int numTrespassers = _waves[currentWave].numTrespassers;
+        int numLegions = _waves[currentWave].numLegions;
+        int numWorms = _waves[currentWave].numWorms;
 
+        List<int> enemiesToBeSpawned = new List<int>();
+
+        for(int i = 0; i < numTrespassers; i++)
+        {
+            enemiesToBeSpawned.Add(0);
+        }
+
+        for (int i = 0; i < numTrespassers; i++)
+        {
+            enemiesToBeSpawned.Add(1);
+        }
+
+        for (int i = 0; i < numTrespassers; i++)
+        {
+            enemiesToBeSpawned.Add(2);
+        }
+
+        GameObject enemy;
 
         // while <???>, keep spawning enemies
-        while (_stopSpawning == false && currentWave < 3)
+        while (enemiesToBeSpawned.Count > 0)
         {
-            if (enemiesSpawned != _waves[currentWave]._enemiesToSpawn)
+            int randomIndex = Random.Range(0, enemiesToBeSpawned.Count);
+            
+            switch (randomIndex)
             {
-                Vector3 posToSpawn = new Vector3(Random.Range(-2f, 2f), -6, 0); // position to spawn (x,y,z)
-                GameObject newEnemy = Instantiate(_enemyPrefab, posToSpawn, Quaternion.identity);
-                newEnemy.transform.parent = _enemyContainer.transform;
-                enemiesSpawned++;
-                yield return new WaitForSeconds(_waves[currentWave].spawnDelay); // wait n seconds before spawning
+                case 0: enemy = _enemyTrespasser; break;
+                case 1: enemy = _enemyLegion; break;
+                case 2: enemy = _enemyWorm; break;
+                default: enemy = _enemyTrespasser; break;
+            }
 
-            }
-            else
-            {
-                _stopSpawning = true;
-            }
+            enemiesToBeSpawned.Remove(randomIndex);
+
+            Vector3 posToSpawn = new Vector3(Random.Range(-2f, 2f), -6, 0); // position to spawn (x,y,z)
+            GameObject newEnemy = Instantiate(enemy, posToSpawn, Quaternion.identity);
+            newEnemy.transform.parent = _enemyContainer.transform;
+            yield return new WaitForSeconds(_waves[currentWave].spawnDelay); // wait n seconds before spawning
+
         }
 
     }

@@ -47,7 +47,7 @@ public class Legion : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         //If an enemy stay inside an explosion while not immune, take dmg and start the explosion immunity timer
-        if (collision.gameObject.tag == "Explosion" && _explosionCooldown >= 2f)
+        if (collision.gameObject.tag == "Explosion" && _explosionCooldown >= 0.2f)
         {
             _health -= collision.GetComponent<Explosion>()._damage;
             _explosionCooldown = 0f;
@@ -57,8 +57,12 @@ public class Legion : MonoBehaviour
     //Enemy turns red then dies shortly after
     private IEnumerator Death()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 100f);
-        yield return new WaitForSeconds(0.5f);
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
+        yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 0);
+        yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
+        yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);
     }
 }

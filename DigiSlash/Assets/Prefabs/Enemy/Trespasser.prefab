@@ -242,3 +242,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyTracer: {fileID: -308093225303561697}
   _health: 40
+  _explosionCooldown: 0

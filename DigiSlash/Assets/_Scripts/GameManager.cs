@@ -22,11 +22,13 @@ public class GameManager : MonoBehaviour
 
     private Scene _currentScene;
     // insert UI Manager
+    private UIManager _uiManager;
 
     // Start is called before the first frame update
     void Start()
     {
         _currentScene = SceneManager.GetActiveScene();
+        _uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
         {
             // game ends
             _isGameOver = true;
-            StartCoroutine(GameOverSequence());
+            GameOverSequence();
         }
 
         // tracks fort HP when it's not game over
@@ -48,7 +50,7 @@ public class GameManager : MonoBehaviour
         {
             // game ends
             _isGameOver = true;
-            StartCoroutine(GameOverSequence());
+            GameOverSequence();
         }
 
         // tracks if the player has killed all enemies during a wave
@@ -58,6 +60,14 @@ public class GameManager : MonoBehaviour
             _spawnManager.currentWave++;
             isPlayerSuccessful = true;
         }
+
+
+        if (Input.GetKeyDown(KeyCode.X) && _isGameOver == true)
+        {
+            RestartLevel(); // restart current level
+        }
+
+
 
     }
 
@@ -79,10 +89,23 @@ public class GameManager : MonoBehaviour
         isPlayerSuccessful = false;
     }
 
-    IEnumerator GameOverSequence()
+    void  GameOverSequence()
     {
-        // set GameOver text to true
+        _isGameOver = true;
+        _uiManager.gameOverTxt.gameObject.SetActive(true);
+        _uiManager.restartLvlTxt.gameObject.SetActive(true);
+        StartCoroutine(GameOverFlickerRoutine());
+    }
 
-        yield return new WaitForSeconds(5.0f);
+    IEnumerator GameOverFlickerRoutine()
+    {
+        while (true)
+        {
+            _uiManager.gameOverTxt.text = "GAME OVER";
+            yield return new WaitForSeconds(0.5f);
+            _uiManager.gameOverTxt.text = "";
+            yield return new WaitForSeconds(0.5f);
+
+        }
     }
 }

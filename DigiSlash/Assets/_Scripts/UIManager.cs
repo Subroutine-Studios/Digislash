@@ -6,34 +6,45 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
 
-    
-    public Fort fortHealth;
-    public Image fortFillImage;
-    public Slider fortSlider;
+    [SerializeField]
+    private Fort fortHealth;
+    [SerializeField]
+    private Image fortFillImage;
+    [SerializeField]
+    private Slider fortSlider;
+    [SerializeField]
+    private Player player;
 
-    public Player player;
-    public Image playerFillImage;
-    public Slider playerSlider;
+    [SerializeField] 
+    private Image playerFillImage;
+    [SerializeField]
+    private Slider playerSlider;
 
 
     // weapon switch labels
+    [SerializeField]
+    private Text weap1Txt;
+    [SerializeField]
+    private Text weap2Txt;
+    [SerializeField]
+    private Text weap1Subtype1Txt;
+    [SerializeField]
+    private Text weap1Subtype2Txt;
+    [SerializeField]
+    private Text weap2Subtype1Txt;
+    [SerializeField]
+    private Text weap2Subtype2Txt;
 
-    public Text weap1Txt;
-    public Text weap2Txt;
-    public Text weap1Subtype1Txt;
-    public Text weap1Subtype2Txt;
-    public Text weap2Subtype1Txt;
-    public Text weap2Subtype2Txt;
-
-
-
+    [SerializeField]
+    public Text gameOverTxt;
+    [SerializeField]
+    public Text restartLvlTxt;
 
 
 
     void Start()
     {
         // Set weapon labels
-
 
     }
 
@@ -44,33 +55,21 @@ public class UIManager : MonoBehaviour
         updateFortHp();
         updatePlayerHp();
 
-        // get current weapon
-        // weawpon index 0 - bullet ; 1 - rocket
-        
-       
+        // weapon index 0 - bullet ; 1 - rocket
 
         if (player._weaponIndex == 0)
         {
             // highlight bullet
             weap1Txt.color = new Color32(255, 255, 255, 255);
             weap2Txt.color = new Color32(255, 255, 255, 70);
-
-
         }
         else if(player._weaponIndex == 1)
         {
-
             // highlight rocket
             weap2Txt.color = new Color32(255, 255, 255, 255);
             weap1Txt.color = new Color32(255, 255, 255, 70); 
 
-
-
         }
-
-
-
-
 
     }
 

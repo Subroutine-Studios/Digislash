@@ -32,13 +32,14 @@ public class Level1 : MonoBehaviour
     void Update()
     {
         //If dialogue is done
-        if(inDialogue && _dialogueManager.done)
+        if (inDialogue && _dialogueManager.done)
         {
             inDialogue = false;
+            _dialogueManager.done = false;
             //When theres still more waves to go
-            if(_gameManager._spawnManager.currentWave < 3)
+            if (_gameManager._spawnManager.currentWave < 3)
             {
-
+                Debug.Log("Current Wave : " + _gameManager._spawnManager.currentWave);
                 inCombat = true;
                 _gameManager.StartWave();
             }
@@ -51,10 +52,10 @@ public class Level1 : MonoBehaviour
         }
 
         //If combat is done
-        else if(inCombat && _gameManager.isPlayerSuccessful)
+        else if (inCombat && _gameManager.isPlayerSuccessful)
         {
             inCombat = false;
-
+            Debug.Log("isPlayerSuccessful " + _gameManager.isPlayerSuccessful + "  inCombat " + inCombat);
 
             /* Call dialogue manager if you need to say something at the next wave
              * 
@@ -85,41 +86,48 @@ public class Level1 : MonoBehaviour
              * 
              */
 
-            switch(_gameManager._spawnManager.currentWave)
+            switch (_gameManager._spawnManager.currentWave)
             {
-                 //Wave 0 will have dialogue before combat
-                case 0: inDialogue = true;
-                StartCoroutine(StartDialogue());
-                break;
-            
+                //Wave 0 will have dialogue before combat
+                case 0:
+                    inDialogue = true;
+                    Debug.Log("CASE 0 inCombat: " + inCombat);
+                    StartCoroutine(StartDialogue());
+                    break;
+
                 //Wave 1 will have dialogue before combat
-                case 1: inDialogue = true;
-                StartCoroutine(StartDialogue());
-                break;
-            
-                 //Wave 2 will go straight to combat
-                case 2: inCombat = true;
-                _gameManager.StartWave();
-                break;
-            }
+                case 1:
+                    inDialogue = true;
+                    Debug.Log("CASE 1 inCombat:  " + inCombat);
+                    StartCoroutine(StartDialogue());
+                    break;
 
-
-
-        //For now, this will just go to the next wave
-        if (_gameManager._spawnManager.currentWave < 3)
-            {
-                inCombat = true;
-                _gameManager.StartWave();
-            }
-
-            else
-            {
-                //next level
-                inCombat = false;
-                // loads Level 2
-                SceneManager.LoadScene(4);
+                //Wave 2 will go straight to combat
+                case 2:
+                    inCombat = true;
+                    Debug.Log("CASE 2 inCombat:  " + inCombat);
+                    _gameManager.StartWave();
+                    break;
             }
             
+
+            /*
+                    //For now, this will just go to the next wave
+                    if (_gameManager._spawnManager.currentWave < 3)
+                        {
+                            inCombat = true;
+                            _gameManager.StartWave();
+                        }
+
+                        else
+                        {
+                            //next level
+                            inCombat = false;
+                            // loads Level 2
+                            SceneManager.LoadScene(4);
+                        }
+                    */
+
         }
     }
 

@@ -7556,6 +7556,10 @@ MonoBehaviour:
     - You have to shoot them 25 times to eliminate them.
     - Take them down before they attack the fort!
     highlight: {fileID: 0}
+  - _sceneName: Wave 3 Dialogue
+    sentences:
+    - Looks like the final wave is arriving, ready up!
+    highlight: {fileID: 0}
   - _sceneName: Cleared Level
     sentences:
     - Congratulations! You have slained the viruses!

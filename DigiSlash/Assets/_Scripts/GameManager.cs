@@ -81,7 +81,10 @@ public class GameManager : MonoBehaviour
         //We can make the player or fort heal a bit
         //Play sounds to indicte start of wave
         //We can even display "Wave 1" on UI
+        //_uiManager.waveText.text = "Wave " + _spawnManager.currentWave;
+        //_uiManager.waveText.gameObject.SetActive(true);
 
+        
         //Spawn enemies
         _spawnManager.doneSpawning = false;
         _spawnManager.SpawnEnemies();
@@ -92,6 +95,7 @@ public class GameManager : MonoBehaviour
     void  GameOverSequence()
     {
         _isGameOver = true;
+        _spawnManager.doneSpawning = false;
         _uiManager.gameOverTxt.gameObject.SetActive(true);
         _uiManager.restartLvlTxt.gameObject.SetActive(true);
         StartCoroutine(GameOverFlickerRoutine());

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 /*
@@ -84,10 +85,28 @@ public class Level1 : MonoBehaviour
              * 
              */
 
+            switch(_gameManager._spawnManager.currentWave)
+            {
+                 //Wave 0 will have dialogue before combat
+                case 0: inDialogue = true;
+                StartCoroutine(StartDialogue());
+                break;
+            
+                //Wave 1 will have dialogue before combat
+                case 1: inDialogue = true;
+                StartCoroutine(StartDialogue());
+                break;
+            
+                 //Wave 2 will go straight to combat
+                case 2: inCombat = true;
+                _gameManager.StartWave();
+                break;
+            }
 
 
-            //For now, this will just go to the next wave
-            if (_gameManager._spawnManager.currentWave < 3)
+
+        //For now, this will just go to the next wave
+        if (_gameManager._spawnManager.currentWave < 3)
             {
                 inCombat = true;
                 _gameManager.StartWave();
@@ -96,6 +115,9 @@ public class Level1 : MonoBehaviour
             else
             {
                 //next level
+                inCombat = false;
+                // loads Level 2
+                SceneManager.LoadScene(4);
             }
             
         }

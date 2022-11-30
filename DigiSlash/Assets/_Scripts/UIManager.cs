@@ -39,6 +39,8 @@ public class UIManager : MonoBehaviour
     public Text gameOverTxt;
     [SerializeField]
     public Text restartLvlTxt;
+    [SerializeField]
+    public Text waveText;
 
 
 

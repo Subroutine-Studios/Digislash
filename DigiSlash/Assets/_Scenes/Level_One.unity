@@ -7553,6 +7553,7 @@ MonoBehaviour:
     - Hold up! A new type of virus has been detected.
     - It seems to be a hoard of worms have appeared with the other viruses.
     - Beware! These worm viruses are fast!
+    - You have to shoot them 25 times to eliminate them.
     - Take them down before they attack the fort!
     highlight: {fileID: 0}
   - _sceneName: Cleared Level
@@ -8793,12 +8794,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6705697927570190365, guid: ba1ddf84a5c386f49b72cc0c9e3d3d35, type: 3}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
+      propertyPath: currentWave
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _enemyLegion
       value: 
       objectReference: {fileID: 6705697927570190365, guid: 82f340136a623c943a5402f47dc700e1, type: 3}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: doneSpawning
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _enemyContainer

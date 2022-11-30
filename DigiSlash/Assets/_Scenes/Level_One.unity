@@ -155,7 +155,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1160759771}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -230,6 +230,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
 --- !u!1 &27171469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,6 +1606,116 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601664413}
   m_CullTransparentMesh: 1
+--- !u!1 &642284105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 642284109}
+  - component: {fileID: 642284108}
+  - component: {fileID: 642284106}
+  - component: {fileID: 642284107}
+  m_Layer: 5
+  m_Name: Wave Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &642284106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642284105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 7ab82aadccc8e5f4d93f68c309526fee, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'Wave 1
+
+'
+--- !u!114 &642284107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642284105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2099f0861acf23043b243f2ead6a46af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fortHealth: {fileID: 529785620}
+  fortFillImage: {fileID: 2085191853}
+  fortSlider: {fileID: 693874964}
+  player: {fileID: 145620033}
+  playerFillImage: {fileID: 2108497745}
+  playerSlider: {fileID: 1751235237}
+  weap1Txt: {fileID: 882558296}
+  weap2Txt: {fileID: 917771130}
+  weap1Subtype1Txt: {fileID: 1356116344}
+  weap1Subtype2Txt: {fileID: 2070628932}
+  weap2Subtype1Txt: {fileID: 1078484101}
+  weap2Subtype2Txt: {fileID: 1576496685}
+  gameOverTxt: {fileID: 1240016173}
+  restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
+--- !u!222 &642284108
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642284105}
+  m_CullTransparentMesh: 1
+--- !u!224 &642284109
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642284105}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1160759771}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 41.947, y: -10}
+  m_SizeDelta: {x: 266.1577, y: 49.3014}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &689596125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,6 +1868,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
 --- !u!1 &732378028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,6 +2114,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 0}
 --- !u!1 &843191464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2192,6 +2305,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
 --- !u!222 &882558298
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2299,6 +2413,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
 --- !u!222 &917771132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2562,6 +2677,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
 --- !u!222 &1078484103
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2791,6 +2907,7 @@ RectTransform:
   - {fileID: 360888534}
   - {fileID: 1514356015}
   - {fileID: 1240016172}
+  - {fileID: 642284109}
   - {fileID: 14640840}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2826,6 +2943,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
 --- !u!1 &1162314796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3157,6 +3275,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
 --- !u!1 &1327935361
 GameObject:
   m_ObjectHideFlags: 0
@@ -3314,6 +3433,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
 --- !u!222 &1356116346
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7430,7 +7550,15 @@ MonoBehaviour:
     highlight: {fileID: 0}
   - _sceneName: Wave 2 Dialogue
     sentences:
-    - nothing yet
+    - Hold up! A new type of virus has been detected.
+    - It seems to be a hoard of worms have appeared with the other viruses.
+    - Beware! These worm viruses are fast!
+    - Take them down before they attack the fort!
+    highlight: {fileID: 0}
+  - _sceneName: Cleared Level
+    sentences:
+    - Congratulations! You have slained the viruses!
+    - Press the Enter Key to proceed to the next level.
     highlight: {fileID: 0}
 --- !u!114 &1530865450
 MonoBehaviour:
@@ -7626,6 +7754,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
 --- !u!114 &1576496685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8120,6 +8249,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
 --- !u!1 &1790619447
 GameObject:
   m_ObjectHideFlags: 0
@@ -8426,6 +8556,7 @@ MonoBehaviour:
   weap2Subtype2Txt: {fileID: 1576496685}
   gameOverTxt: {fileID: 1240016173}
   restartLvlTxt: {fileID: 14640841}
+  waveText: {fileID: 642284106}
 --- !u!222 &2070628934
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8679,15 +8810,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[0].numWorms
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
-      propertyPath: _waves.Array.data[1].numWorms
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
-      propertyPath: _waves.Array.data[2].numWorms
+      propertyPath: _waves.Array.data[1].numWorms
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
+      propertyPath: _waves.Array.data[2].numWorms
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[3].numWorms
@@ -8703,11 +8834,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[1].numLegions
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[1].spawnDelay
-      value: 0
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
+      propertyPath: _waves.Array.data[2].numLegions
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
+      propertyPath: _waves.Array.data[2].spawnDelay
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[3].numLegions
@@ -8723,11 +8862,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[1].numTrespassers
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[2].numTrespassers
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[3].numTrespassers

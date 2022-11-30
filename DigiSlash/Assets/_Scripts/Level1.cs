@@ -118,11 +118,15 @@ public class Level1 : MonoBehaviour
                     inCombat = false;
                     Debug.Log("All waves cleared.");
                     StartCoroutine(StartDialogue());
+                    break;
                     
+                    /* Switching to next level works. Will uncomment once all levels are accomplished/
+                     * 
                     // go to level 2
                     if (Input.GetKeyDown(KeyCode.Return))
                         SceneManager.LoadScene(4);
                     break;
+                    */
             }
 
         }

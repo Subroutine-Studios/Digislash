@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Weapon _currentWeapon;
     public int _weaponIndex = 0;
+    public bool _isFirstSubtype = true;
 
     [SerializeField]
     private bool _canShoot = true;
@@ -60,14 +61,34 @@ public class Player : MonoBehaviour
             {
                 Shoot();
                 _canShoot = false;
-                StartCoroutine(ShotTimer(_currentWeapon.rps));
+                StartCoroutine(ShotTimer(_currentWeapon.rpsA));
             }
 
+            // Switch Weapons
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                _currentWeapon = _weapons[0];
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2) && _weapons.Length > 1)
+            {
+                _currentWeapon = _weapons[1];
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3) && _weapons.Length > 2)
+            {
+                _currentWeapon = _weapons[2];
+            }
+
+            // Switch Subtypes
             if (Input.GetKeyDown(KeyCode.R))
             {
-                _weaponIndex++;
-                if (_weaponIndex >= _weapons.Length) _weaponIndex = 0;
-                _currentWeapon = _weapons[_weaponIndex];
+                // if second subtype exists
+
+                if (_isFirstSubtype && _currentWeapon.prefabB)
+                    _isFirstSubtype = false; 
+                else
+                    _isFirstSubtype = true;
+                
+                //_currentWeapon = _weapons[_weaponIndex];
             }
 
             if (_cooldown < 2)
@@ -155,9 +176,23 @@ public class Player : MonoBehaviour
     //Shoot bullet based on the weapon and its stats 
     void Shoot()
     {
-        GameObject bullet = Instantiate(_currentWeapon.prefab, _firePos.transform.position, _firePos.transform.rotation);
+        GameObject prefab;
+        float bulletForce;
+
+        if (_isFirstSubtype)
+        {
+            prefab = _currentWeapon.prefabA;
+            bulletForce = _currentWeapon.bulletForceA;
+        }
+        else
+        {
+            prefab = _currentWeapon.prefabB;
+            bulletForce = _currentWeapon.bulletForceB;
+        }
+
+        GameObject bullet = Instantiate(prefab, _firePos.transform.position, _firePos.transform.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(_firePos.transform.up * _currentWeapon.bulletForce, ForceMode2D.Impulse);
+        rb.AddForce(_firePos.transform.up * bulletForce, ForceMode2D.Impulse);
     }
 
     //Cooldown for shooting a weapon based on the weapon stats

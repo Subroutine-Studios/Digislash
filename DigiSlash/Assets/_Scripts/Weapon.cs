@@ -4,26 +4,34 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public string bullet;
-    public string bulletSubType;
+    public string bulletSubTypeA;
+    public string bulletSubTypeB;
 
-    public float bulletForce;
+    public float bulletForceA;
+    public float bulletForceB;
 
-    public float baseDmg;
-    public float rps;
+    public float baseDmgA;
+    public float baseDmgB;
 
-    public GameObject prefab;
+    public float rpsA;
+    public float rpsB;
 
+    public GameObject prefabA;
+    public GameObject prefabB;
 
-
-    public Weapon(string bullet, string bulletSubType, float baseDmg, float rps)
+    public Weapon(string bullet, string bulletSubTypeA, string bulletSubTypeB, float bulletForceA, float bulletForceB, float baseDmgA, float baseDmgB, float rpsA, float rpsB, GameObject prefabA, GameObject prefabB)
     {
         this.bullet = bullet;
-        this.bulletSubType = bulletSubType;
-        this.baseDmg = baseDmg;
-        this.rps = rps;
+        this.bulletSubTypeA = bulletSubTypeA;
+        this.bulletSubTypeB = bulletSubTypeB;
+        this.bulletForceA = bulletForceA;
+        this.bulletForceB = bulletForceB;
+        this.baseDmgA = baseDmgA;
+        this.baseDmgB = baseDmgB;
+        this.rpsA = rpsA;
+        this.rpsB = rpsB;
+        this.prefabA = prefabA;
+        this.prefabB = prefabB;
     }
-
-  
-
 }
 

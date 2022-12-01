@@ -7,46 +7,48 @@ using UnityEngine.UI;
 public class BuildPhase : MonoBehaviour
 {
 
-    // scene reference
-    public static BuildPhase buildPhaseScene;
 
     //proceed button
-    public GameObject _proceedBtn;
+    [SerializeField]
+    private GameObject _proceedBtn;
 
 
     // bullet type buttons
-    public GameObject _bulletBtn;
-    public GameObject _rocketBtn;
-    public GameObject _stickyBtn;
+    [SerializeField]
+    private GameObject _bulletBtn;
+    [SerializeField]
+    private GameObject _rocketBtn;
+    [SerializeField]
+    private GameObject _stickyBtn;
 
     //trait buttons
-    public GameObject _multiShotBtn;
-    public GameObject _ricochetBtn;
-
-
-    public GameObject _warpedBtn;
-    public GameObject _doubleEdgeBtn;
-    public GameObject _rapidFireBtn;
-    public GameObject _heavyBtn;
-    public GameObject _overClockedBtn;
-
-    //equip trait button
-
+    [SerializeField]
+    private GameObject _multiShotBtn;
+    [SerializeField]
+    private GameObject _warpedBtn;
+    [SerializeField]
+    private GameObject _rapidFireBtn;
 
     //switch weap button
-    public GameObject _weap1Btn;
-    public GameObject _weap2Btn;
+    [SerializeField]
+    private GameObject _weap1Btn;
+    [SerializeField]
+    private GameObject _weap2Btn;
 
     // function content
-
-    public Text _fcBulletTypeText;
-    public Text _fcSubTypeText;
-    public Text _fcBaseDmgText;
-    public Text _fcRpsText;
+    [SerializeField]
+    private Text _fcBulletTypeText;
+    [SerializeField]
+    private Text _fcSubTypeText;
+    [SerializeField]
+    private Text _fcBaseDmgText;
+    [SerializeField]
+    private Text _fcRpsText;
 
 
     // trait description content
-    public Text _traitDescText;
+    [SerializeField]
+    private Text _traitDescText;
 
 
     // Store values
@@ -54,9 +56,13 @@ public class BuildPhase : MonoBehaviour
 
     public static int _selectedWeap; // 0 is Weap 1 , 1 is Weap 2
 
+    [SerializeField]
+    private GameObject _prefabA;
+    [SerializeField]
+    private GameObject _prefabB;
+
 
     // player
-
     private Player _player;
 
 
@@ -67,17 +73,11 @@ public class BuildPhase : MonoBehaviour
 
         _weapons = new Weapon[2];
 
-        // CHANGE THIS
-        _weapons[0] = new Weapon("null", "null", 0, 0);
-        _weapons[1] = new Weapon("null 1", "null 1", 0, 0);
+        _weapons[0] = new Weapon("null", "null", "null", 0, 0, 0, 0, 0, 0, _prefabA, _prefabB);
+        _weapons[1] = new Weapon("null", "null", "null", 0, 0, 0, 0, 0, 0, _prefabA, _prefabB);
+
 
         Debug.Log("Buld phase start: " + _weapons[_selectedWeap].bullet + " selected weapon : " + _selectedWeap);
-
-        buildPhaseScene = this;
-
-      //  _player = GameObject.Find("Player");
-
-       
 
 
     }
@@ -86,12 +86,24 @@ public class BuildPhase : MonoBehaviour
 
     // CHANGE THIS
     // Update weapon array values
-    public void updateWeaponList(string bullet, string bulletSubType, string baseDmg, string rps)
+
+    public void updateWeaponList(string bullet, string bulletSubTypeA, string bulletSubTypeB, float bulletForceA, float bulletForceB, float baseDmgA, float baseDmgB, float rpsA, float rpsB, GameObject prefabA, GameObject prefabB)
     {
         _weapons[_selectedWeap].bullet = bullet;
-        _weapons[_selectedWeap].bulletSubType = bulletSubType;
-        _weapons[_selectedWeap].baseDmg = float.Parse(baseDmg);
-        _weapons[_selectedWeap].rps = float.Parse(rps);
+        _weapons[_selectedWeap].bulletSubTypeA = bulletSubTypeA;
+        _weapons[_selectedWeap].bulletSubTypeB = bulletSubTypeB;
+        _weapons[_selectedWeap].bulletForceA = bulletForceA;
+        _weapons[_selectedWeap].bulletForceB = bulletForceB;
+
+
+        _weapons[_selectedWeap].baseDmgA = baseDmgA;
+        _weapons[_selectedWeap].baseDmgB = baseDmgB;
+
+        _weapons[_selectedWeap].rpsA = rpsA;
+        _weapons[_selectedWeap].rpsB = rpsB;
+
+        _weapons[_selectedWeap].prefabA = prefabA;
+        _weapons[_selectedWeap].prefabB = prefabB;
 
     }
 
@@ -106,12 +118,13 @@ public class BuildPhase : MonoBehaviour
         _fcBulletTypeText.text = "INT";
         _fcSubTypeText.text = "Shrapnel, Tracer";
         _fcBaseDmgText.text = "12";
-        _fcRpsText.text = "10 " ;
+        _fcRpsText.text = "10 ";
 
-        updateWeaponList("INT", "Shrapnel, Tracer", "12", "10");
+        updateWeaponList("INT", "Shrapnel", "Tracer", 8, 8, 12, 12, 10, 10, _prefabA, _prefabB);
 
 
-      //  Debug.Log("BUTTON CLICK : Values of array weapon : "+ " weap # " + _selectedWeap + _weapons[_selectedWeap].bullet);
+
+        //  Debug.Log("BUTTON CLICK : Values of array weapon : "+ " weap # " + _selectedWeap + _weapons[_selectedWeap].bullet);
 
 
     }
@@ -124,7 +137,8 @@ public class BuildPhase : MonoBehaviour
         _fcBaseDmgText.text = "60";
         _fcRpsText.text = "1";
 
-        updateWeaponList("FL", "Nuclear, Napalm", "60", "1");
+        updateWeaponList("FL", "Nuclear", "Napalm", 8, 8, 60, 60, 1, 1, _prefabA, _prefabB);
+
 
     }
 
@@ -136,7 +150,8 @@ public class BuildPhase : MonoBehaviour
         _fcBaseDmgText.text = "30";
         _fcRpsText.text = "4";
 
-        updateWeaponList("STR", "Plague, Singularity", "30", "4");
+
+        updateWeaponList("STR", "Plague", "Singularity", 8, 8, 30, 30, 4, 4, _prefabA, _prefabB);
 
     }
 
@@ -149,12 +164,6 @@ public class BuildPhase : MonoBehaviour
 
     }
 
-    public void ricochetBtnClick()
-    {
-        // display description
-        _traitDescText.text = "Projectiles bounce once on enemy hit";
-
-    }
 
     public void warpedBtnClick()
     {
@@ -163,12 +172,6 @@ public class BuildPhase : MonoBehaviour
 
     }
 
-    public void doubleEdgeBtnClick()
-    {
-        // display description
-        _traitDescText.text = "+ 100 % damage\n Receive 20 % of damage as recoil";
-
-    }
 
     public void rapidFireBtnClick()
     {
@@ -177,34 +180,11 @@ public class BuildPhase : MonoBehaviour
 
     }
 
-    public void heavyBtnClick()
-    {
-        // display description
-        _traitDescText.text = "+ 20% damage\n- 15 % fire rate\n- movespeed";
-
-    }
-
-    public void overClockBtnClick()
-    {
-        // display description
-        _traitDescText.text = "+ 50% damage\n+ 40 % fire rate\n+ Projectile speed\nChance to temporarily disable weapon upon firing / Bar for being disabled";
-
-    }
-
-
-
-    // Need to Store 
-
-    //Array 
-    // Weapon 1
-    // Bullet type
-    // Bullet traits []
 
 
     public void weap1BtnClick()
     {
         _selectedWeap = 0;
-
         updateFunctionScreen();
 
     }
@@ -214,17 +194,14 @@ public class BuildPhase : MonoBehaviour
         _selectedWeap = 1;
         updateFunctionScreen();
 
-
- 
     }
 
-    // change this
     public void updateFunctionScreen()
     {
         _fcBulletTypeText.text = _weapons[_selectedWeap].bullet;
-        _fcSubTypeText.text = _weapons[_selectedWeap].bulletSubType;
-        _fcBaseDmgText.text = _weapons[_selectedWeap].baseDmg.ToString();
-        _fcRpsText.text = _weapons[_selectedWeap].rps.ToString();
+        _fcSubTypeText.text = _weapons[_selectedWeap].bulletSubTypeA;
+        _fcBaseDmgText.text = _weapons[_selectedWeap].baseDmgA.ToString();
+        _fcRpsText.text = _weapons[_selectedWeap].rpsA.ToString();
     }
 
 

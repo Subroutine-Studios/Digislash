@@ -19,7 +19,7 @@ public class Story : MonoBehaviour
     [SerializeField]
     private GameObject orbImage;
 
-    private bool showWeapon = false;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -33,22 +33,27 @@ public class Story : MonoBehaviour
 
     void Update()
     {
-        // if (inDialogue && _dialogueManager.done && showWeapon)
-        if (inDialogue && _dialogueManager.done)
+  
+        if (inDialogue && _dialogueManager.done) 
         {
             inDialogue = false;
             _dialogueManager.done = false;
-            SceneManager.LoadScene("Level_One");
+
+            orbImage.gameObject.SetActive(true);
+            Debug.Log("Orb Image " + orbImage.gameObject.activeSelf);
+
+            StartCoroutine(StartDialogue());
+
+           // Debug.Log("dialogue manager " + _dialogueManager.done);
         }
 
-        /*
-        else if(!showWeapon)
+        if (_dialogueManager.done)
         {
-            inDialogue = true;
-            orbImage.gameObject.SetActive(true);
-            StartCoroutine(StartDialogue());
+            Debug.Log("Load Level 1");
+            SceneManager.LoadScene("Level_One");
+
         }
-        */
+
 
     }
 

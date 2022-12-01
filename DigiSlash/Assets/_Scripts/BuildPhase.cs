@@ -67,6 +67,7 @@ public class BuildPhase : MonoBehaviour
 
         _weapons = new Weapon[2];
 
+        // CHANGE THIS
         _weapons[0] = new Weapon("null", "null", 0, 0);
         _weapons[1] = new Weapon("null 1", "null 1", 0, 0);
 
@@ -83,7 +84,7 @@ public class BuildPhase : MonoBehaviour
 
 
 
-
+    // CHANGE THIS
     // Update weapon array values
     public void updateWeaponList(string bullet, string bulletSubType, string baseDmg, string rps)
     {
@@ -217,7 +218,7 @@ public class BuildPhase : MonoBehaviour
  
     }
 
-
+    // change this
     public void updateFunctionScreen()
     {
         _fcBulletTypeText.text = _weapons[_selectedWeap].bullet;

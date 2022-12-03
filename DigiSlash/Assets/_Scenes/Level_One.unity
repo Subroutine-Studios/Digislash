@@ -8824,6 +8824,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1092258803}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
+      propertyPath: _enemyTrespasser
+      value: 
+      objectReference: {fileID: 6705697927570190365, guid: a5945f8db411df043b6e23e5b0d75d63, type: 3}
+    - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.size
       value: 3
       objectReference: {fileID: 0}

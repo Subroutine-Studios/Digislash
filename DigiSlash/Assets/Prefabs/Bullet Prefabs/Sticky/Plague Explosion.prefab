@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8069187009864540778}
   - component: {fileID: 2452204895313040439}
   m_Layer: 0
-  m_Name: Singularity
+  m_Name: Plague Explosion
   m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: -1374749091
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fd5dbcf8be2a7bc4b93e4dd1d1c3b496, type: 3}
+  m_Color: {r: 0.66927725, g: 0.9433962, b: 0.6194375, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!114 &2452204895313040439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,3 +116,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _decayTime: 0.1
   _damage: 30
+  isSingularity: 0
+  isPlague: 1

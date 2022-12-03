@@ -190,7 +190,7 @@ public class Player : MonoBehaviour
             bulletForce = _currentWeapon.bulletForceB;
         }
 
-        GameObject bullet = Instantiate(prefab, _firePos.transform.position, _firePos.transform.rotation);
+        GameObject bullet = Instantiate(prefab, _firePos.transform.position, _firePos.transform.rotation * Quaternion.Euler(0, 0, 90));
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(_firePos.transform.up * bulletForce, ForceMode2D.Impulse);
     }

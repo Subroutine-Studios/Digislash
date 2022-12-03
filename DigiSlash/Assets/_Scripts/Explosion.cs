@@ -9,6 +9,8 @@ public class Explosion : MonoBehaviour
     [SerializeField]
     public float _damage = 60f;
 
+    public bool isSingularity = false;
+
     // Start is called before the first frame update
     void Start()
     {

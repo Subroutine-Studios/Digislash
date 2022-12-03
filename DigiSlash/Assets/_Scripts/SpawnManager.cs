@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -30,6 +31,11 @@ public class SpawnManager : MonoBehaviour
 
     public bool doneSpawning = true;
 
+    [SerializeField]
+    private GameObject _waveAnnoucement;
+    [SerializeField]
+    private TextMeshProUGUI _waveText;
+
 
     
 
@@ -52,6 +58,11 @@ public class SpawnManager : MonoBehaviour
 
     public IEnumerator SpawnEnemyRoutine()
     {
+        _waveText.text = "Wave " + (currentWave+1).ToString();
+        _waveAnnoucement.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        _waveAnnoucement.SetActive(false);
+
         doneSpawning = false;
         int numTrespassers = _waves[currentWave].numTrespassers;
         int numLegions = _waves[currentWave].numLegions;

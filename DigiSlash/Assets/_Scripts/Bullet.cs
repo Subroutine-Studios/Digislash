@@ -14,12 +14,24 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private GameObject trail;
 
+    [SerializeField]
+    private bool isSticky = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //If the bullet hits anything thats not a player or a gate
-        if(collision.gameObject.tag != "Player" && collision.gameObject.tag != "Gate")
+        if(collision.gameObject.tag != "Player" && collision.gameObject.tag != "Gate" && collision.gameObject.tag != "Explosion")
         {
-            if(explosion)
+            Debug.Log(collision);
+            if (isSticky && explosion)
+            {
+                transform.parent = collision.transform;
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+                StartCoroutine(TimerToExplosion());
+            }
+        }
+
+            else if (!isSticky && explosion)
                 Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
 
             /* Use only if you want particle effect upon hitting enemy
@@ -28,9 +40,15 @@ public class Bullet : MonoBehaviour
                 
             }
             */
-            Destroy(gameObject);
-        }
 
-            
+            if(!isSticky)
+                Destroy(gameObject);     
+    }
+
+    public IEnumerator TimerToExplosion()
+    {
+        yield return new WaitForSeconds(1f);
+        Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(gameObject);
     }
 }

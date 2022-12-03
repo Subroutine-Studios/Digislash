@@ -12,6 +12,10 @@ public class Legion : MonoBehaviour
 
     private bool dead = false;
 
+
+    [SerializeField]
+    private GameObject _enemySmallLegion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,8 @@ public class Legion : MonoBehaviour
         {
             dead = true;
             StartCoroutine(Death());
+
+           // StartCoroutine(SpawnSmallLegions());
         }
 
         //Recharge cool down to 0.2 secs
@@ -70,6 +76,30 @@ public class Legion : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
         gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 0);
         yield return new WaitForSeconds(0.15f);
+      
+
+        yield return new WaitForSeconds(0.5f);
+
+        int enemyCount = 10;
+
+
+        GameObject enemy = _enemySmallLegion;
+
+        while (enemyCount != 0)
+        {
+            Debug.Log("Enemy Count " + enemyCount);
+         
+            Vector3 posToSpawn = new Vector3(transform.position.x, transform.position.y, transform.position.z); // position to spawn (x,y,z)
+            GameObject newEnemy = Instantiate(enemy, posToSpawn, Quaternion.identity);
+
+            enemyCount--;
+
+            yield return new WaitForSeconds(0.2f); // wait n seconds before spawning
+
+        }
+
         Destroy(gameObject);
+
     }
+ 
 }

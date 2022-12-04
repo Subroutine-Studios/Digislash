@@ -18,11 +18,15 @@ public class Trespasser : MonoBehaviour
     {
         _enemyTracer._AIDestinationTarget.target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         _enemyTracer._target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        StartCoroutine("TrespasserFlickerRoutine");
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    
         //If enemy dies, run Death()
         if (_health <= 0 && !dead)
         {
@@ -30,11 +34,15 @@ public class Trespasser : MonoBehaviour
             StartCoroutine(Death());
         }
 
+
         //Recharge cool down to 0.2 secs
         if (_explosionCooldown < 0.2f)
         {
             _explosionCooldown += Time.deltaTime;
         }
+
+
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,6 +55,28 @@ public class Trespasser : MonoBehaviour
         
 
 
+    }
+
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Collided with player");
+            //stop flicker routine
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 255f);
+           // StopCoroutine(TrespasserFlickerRoutine());
+            StopCoroutine("TrespasserFlickerRoutine");
+
+
+            // teleport behind player
+            Vector3 posToTp = new Vector3(_enemyTracer._target.position.x - 0.1f, _enemyTracer._target.position.y + 1, _enemyTracer._target.position.z); // position of player
+            transform.position = posToTp;
+
+
+
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -75,4 +105,25 @@ public class Trespasser : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
         Destroy(gameObject);
     }
+
+
+    private IEnumerator TrespasserFlickerRoutine()
+    {
+
+        while (!dead)
+        {
+      
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 0);
+            yield return new WaitForSeconds(2f);
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 255f);
+            yield return new WaitForSeconds(3f);
+
+      
+     
+
+        }
+    }
+
+
+
 }

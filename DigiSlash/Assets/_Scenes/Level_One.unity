@@ -999,14 +999,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: Bullet
-  bulletSubTypeA: 
-  bulletSubTypeB: 
+  bulletSubTypeA: Shrapnel
+  bulletSubTypeB: Tracer
   bulletForceA: 0
   bulletForceB: 0
-  baseDmgA: 0
-  baseDmgB: 0
-  rpsA: 0
-  rpsB: 0
+  baseDmgA: 10
+  baseDmgB: 12
+  rpsA: 10
+  rpsB: 10
   prefabA: {fileID: 0}
   prefabB: {fileID: 0}
 --- !u!1 &454113085

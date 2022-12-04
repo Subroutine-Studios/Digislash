@@ -1198,8 +1198,8 @@ MonoBehaviour:
   baseDmgB: 12
   rpsA: 10
   rpsB: 10
-  prefabA: {fileID: 0}
-  prefabB: {fileID: 0}
+  prefabA: {fileID: 5249007127712439410, guid: fa3afddd22eace547ab550eef164dd02, type: 3}
+  prefabB: {fileID: 7017584043013824122, guid: ffc4b7f7e85b2154eaa62eeda362847f, type: 3}
 --- !u!1 &454113085
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8069187009864540778}
   - component: {fileID: 2452204895313040439}
   m_Layer: 0
-  m_Name: Rocket Explosion
+  m_Name: Napalm Explosion
   m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

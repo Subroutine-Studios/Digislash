@@ -9020,6 +9020,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
+      propertyPath: _enemyPhalanx
+      value: 
+      objectReference: {fileID: 6414426566571331510, guid: 6d1b436b27c9db64fa8eab99daab95a7, type: 3}
+    - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _enemyContainer
       value: 
       objectReference: {fileID: 1092258803}

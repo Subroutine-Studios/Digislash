@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
  * THIS script is unique per level, depending on when you want dialogue or a wave
  * NOTE NOTE NOTE
  */
-public class Level1 : MonoBehaviour
+public class Level3 : MonoBehaviour
 {
     [SerializeField]
     private GameManager _gameManager;
@@ -124,7 +124,7 @@ public class Level1 : MonoBehaviour
                      * 
                     // go to level 2
                     if (Input.GetKeyDown(KeyCode.Return))
-                        SceneManager.LoadScene(3);
+                        SceneManager.LoadScene(4);
                     break;
                     */
             }

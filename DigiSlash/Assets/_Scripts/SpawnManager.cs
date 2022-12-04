@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class SpawnManager : MonoBehaviour
         public int numTrespassers = 0;
         public int numLegions = 0;
         public int numWorms = 0;
+        public int numPhalanx = 0;
         public float spawnDelay = 3f;
     }
 
@@ -24,11 +26,18 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject _enemyWorm;
     [SerializeField]
+    private GameObject _enemyPhalanx;
+    [SerializeField]
     private GameObject _enemyContainer;
 
     public int currentWave = 0;
 
     public bool doneSpawning = true;
+
+    [SerializeField]
+    private GameObject _waveAnnoucement;
+    [SerializeField]
+    private TextMeshProUGUI _waveText;
 
 
     
@@ -52,14 +61,21 @@ public class SpawnManager : MonoBehaviour
 
     public IEnumerator SpawnEnemyRoutine()
     {
+        _waveText.text = "Wave " + (currentWave+1).ToString();
+        _waveAnnoucement.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        _waveAnnoucement.SetActive(false);
+
         doneSpawning = false;
         int numTrespassers = _waves[currentWave].numTrespassers;
         int numLegions = _waves[currentWave].numLegions;
         int numWorms = _waves[currentWave].numWorms;
+        int numPhalanx = _waves[currentWave].numPhalanx;
 
         Debug.Log("tres: " + _waves[currentWave].numTrespassers);
         Debug.Log("leg: " + _waves[currentWave].numLegions);
         Debug.Log("worm: " + _waves[currentWave].numWorms);
+        Debug.Log("phalanx: " + _waves[currentWave].numPhalanx);
 
         //Add different enemies into the list
         List<int> enemiesToBeSpawned = new List<int>();
@@ -80,6 +96,11 @@ public class SpawnManager : MonoBehaviour
             enemiesToBeSpawned.Add(2);
         }
 
+        for (int i = 0; i < numPhalanx; i++)
+        {
+            enemiesToBeSpawned.Add(3);
+        }
+
         GameObject enemy;
 
         for(int i = 0; i< enemiesToBeSpawned.Count; i++)
@@ -98,6 +119,7 @@ public class SpawnManager : MonoBehaviour
                 case 0: enemy = _enemyTrespasser; break;
                 case 1: enemy = _enemyLegion; break;
                 case 2: enemy = _enemyWorm; break;
+                case 3: enemy = _enemyPhalanx; break;
                 default: enemy = _enemyTrespasser; break;
             }
 

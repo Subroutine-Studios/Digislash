@@ -30,6 +30,15 @@ public class Player : MonoBehaviour
 
     private float _cooldown = 2;
 
+
+    //Features
+    [SerializeField]
+    private bool _multiShot = false;
+    [SerializeField]
+    private bool _warped = false;
+    [SerializeField]
+    private bool _rapidFire = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +70,13 @@ public class Player : MonoBehaviour
             {
                 Shoot();
                 _canShoot = false;
-                StartCoroutine(ShotTimer(_currentWeapon.rpsA));
+
+                //If rapid fire feature is on, increase rps by 5
+                if(_rapidFire)
+                    StartCoroutine(ShotTimer(_currentWeapon.rpsA + 5));
+
+                else
+                    StartCoroutine(ShotTimer(_currentWeapon.rpsA));
             }
 
             // Switch Weapons
@@ -190,9 +205,47 @@ public class Player : MonoBehaviour
             bulletForce = _currentWeapon.bulletForceB;
         }
 
-        GameObject bullet = Instantiate(prefab, _firePos.transform.position, _firePos.transform.rotation);
+        //If warped feature is enabled, spawn bullet at mouse
+        Vector3 fireLocation;
+        if (_warped)
+            fireLocation = mousePos;
+
+        else
+            fireLocation = _firePos.transform.position;
+
+
+        GameObject bullet = Instantiate(prefab, fireLocation, _firePos.transform.rotation * Quaternion.Euler(0, 0, 90));
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(_firePos.transform.up * bulletForce, ForceMode2D.Impulse);
+        
+
+        //If multishot feature is enabled, spawn two more bullets in diff angles
+        if (_multiShot)
+        {
+            Quaternion quat1;
+            Quaternion quat2;
+            if (_firePos.transform.rotation.z >=0)
+            {
+                quat1 = Quaternion.Euler(0, 0, 80);
+                quat2 = Quaternion.Euler(0, 0, 110);
+            }
+
+            else
+            {
+                quat1 = Quaternion.Euler(0, 0, 110);
+                quat2 = Quaternion.Euler(0, 0, 80);
+            }
+
+            bullet = Instantiate(prefab, fireLocation, _firePos.transform.rotation * quat1);
+            rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce((_firePos.transform.up + new Vector3(0.2f, 0.2f)) * bulletForce, ForceMode2D.Impulse);
+
+            bullet = Instantiate(prefab, fireLocation, _firePos.transform.rotation * quat2);
+            rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce((_firePos.transform.up + new Vector3(-0.2f, -0.2f)) * bulletForce, ForceMode2D.Impulse);
+        }
+
+
     }
 
     //Cooldown for shooting a weapon based on the weapon stats

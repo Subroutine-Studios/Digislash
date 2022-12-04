@@ -1011,11 +1011,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2866,8 +2866,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092258805}
-  - component: {fileID: 1092258807}
   - component: {fileID: 1092258806}
+  - component: {fileID: 1092258807}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2916,7 +2916,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1092258803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be6ac0f815f46e45a30617ebb89fe6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b6c9b83f2f64d247815a211ae821c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 1092258806}
@@ -7578,7 +7578,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6415094, g: 0.46895447, b: 0.31167677, a: 1}
   m_Origin: {x: -15, y: -6, z: 0}
   m_Size: {x: 30, y: 16, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -7618,7 +7618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1530865447
 Transform:
   m_ObjectHideFlags: 0
@@ -9024,9 +9024,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1092258803}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
-      propertyPath: _enemyTrespasser
+      propertyPath: _waveAnnoucement
       value: 
-      objectReference: {fileID: 6705697927570190365, guid: a5945f8db411df043b6e23e5b0d75d63, type: 3}
+      objectReference: {fileID: 190102489}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.size
       value: 3
@@ -9049,7 +9049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[0].numLegions
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[0].spawnDelay
@@ -9081,7 +9081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[0].numTrespassers
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[1].numTrespassers

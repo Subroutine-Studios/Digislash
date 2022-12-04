@@ -10,6 +10,7 @@ public class Explosion : MonoBehaviour
     public float _damage = 60f;
 
     public bool isSingularity = false;
+    public bool isPlague = false;
 
     // Start is called before the first frame update
     void Start()

@@ -5569,7 +5569,7 @@ MonoBehaviour:
   _continueText: {fileID: 557096418}
   _dialogueBox: {fileID: 1216081441}
   _sceneIndex: 0
-  _typingSpeed: 0.05
+  _typingSpeed: 0.03
   done: 0
   soundEffect: {fileID: 1921905969}
 --- !u!4 &1921905972
@@ -5830,7 +5830,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 733009670}
   m_HandleRect: {fileID: 733009669}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

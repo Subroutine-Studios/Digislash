@@ -112,7 +112,7 @@ public class Level2 : MonoBehaviour
                 case 2:
                     inDialogue = true;
                     Debug.Log("CASE 2 inCombat:  " + inCombat);
-                    _gameManager.StartWave();
+                    StartCoroutine(StartDialogue());
                     break;
                 
                  // all waves have been cleared

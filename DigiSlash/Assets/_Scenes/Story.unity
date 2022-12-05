@@ -5091,7 +5091,7 @@ MonoBehaviour:
   _continueText: {fileID: 1162314796}
   _dialogueBox: {fileID: 1514356014}
   _sceneIndex: 0
-  _typingSpeed: 0.05
+  _typingSpeed: 0.03
   done: 0
   soundEffect: {fileID: 1530865448}
 --- !u!1 &1568667563

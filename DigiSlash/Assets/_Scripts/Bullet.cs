@@ -15,7 +15,8 @@ public class Bullet : MonoBehaviour
     private GameObject trail;
 
     [SerializeField]
-    public bool isShrapnel = true;
+    public bool isShrapnel = false;
+    public bool isTracer = false;
 
     [SerializeField]
     private bool isSticky = false;

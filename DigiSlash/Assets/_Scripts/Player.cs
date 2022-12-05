@@ -20,8 +20,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private Weapon[] _weapons;
-    [SerializeField]
-    private Weapon _currentWeapon;
+    
+
+    public Weapon _currentWeapon;
     public int _weaponIndex = 0;
     public bool _isFirstSubtype = true;
 

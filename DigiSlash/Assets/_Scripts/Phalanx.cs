@@ -74,6 +74,11 @@ public class Phalanx : MonoBehaviour
         // If a bullet hits the enemy, deal dmg equal the the bullet dmg
         if (collision.gameObject.tag == "Bullet")
         {
+            if (collision.GetComponent<Bullet>().isShrapnel)
+            {
+
+            }
+
             if(_damageCooldown >= 0.8f)
             {
                 _health -= collision.GetComponent<Bullet>()._damage;

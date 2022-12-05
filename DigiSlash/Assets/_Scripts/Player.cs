@@ -81,11 +81,11 @@ public class Player : MonoBehaviour
             }
 
             // Switch Weapons
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 _currentWeapon = _weapons[0];
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha2) && _weapons.Length > 1)
+            else if (Input.GetKeyDown(KeyCode.Alpha1) && _weapons.Length > 1)
             {
                 _currentWeapon = _weapons[1];
             }

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1587024927416948989}
   - component: {fileID: 715193915345780911}
   - component: {fileID: 171984495859778877}
+  - component: {fileID: -4723938342033477558}
   m_Layer: 0
   m_Name: Shrapnel
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5249007127712439410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.722, y: -1.289, z: 0}
-  m_LocalScale: {x: 0.5031, y: 0.5031, z: 0.5031}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.5031}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 828fe1f254404bb44aeccc97a40bb644, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_Color: {r: 1, g: 0.2603774, b: 0.2603774, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.5, y: 1}
@@ -117,9 +118,28 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.03}
   m_Size: {x: 1.45, y: 0.74}
   m_Direction: 1
+--- !u!114 &-4723938342033477558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249007127712439410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82394519e91002d4d8046d4d5f2ed2ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 0}
+  _damage: 12
+  _shatter: {fileID: 5249007127712439410, guid: dc068793cfc60bb43b396efc976d17bf, type: 3}
+  trail: {fileID: 0}
+  isShrapnel: 1
+  isTracer: 0
+  isSticky: 0

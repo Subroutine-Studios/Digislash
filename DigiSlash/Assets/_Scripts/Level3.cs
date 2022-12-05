@@ -25,7 +25,8 @@ public class Level3 : MonoBehaviour
     void Start()
     {
         //Start talking about the incoming enemies 
-        StartCoroutine(StartDialogue());
+        //StartCoroutine(StartDialogue());
+        _gameManager.StartWave();
     }
 
     // Update is called once per frame
@@ -94,16 +95,16 @@ public class Level3 : MonoBehaviour
             {
                 //Wave 0 will have dialogue before combat
                 case 0:
-                    inDialogue = true;
+                    inCombat = true;
                     Debug.Log("CASE 0 inCombat: " + inCombat);
-                    StartCoroutine(StartDialogue());
+                    _gameManager.StartWave();
                     break;
 
                 //Wave 1 will have dialogue before combat
                 case 1:
-                    inDialogue = true;
-                    Debug.Log("CASE 1 inCombat:  " + inCombat);
-                    StartCoroutine(StartDialogue());
+                    inCombat = true;
+                    Debug.Log("CASE 1 inCombat: " + inCombat);
+                    _gameManager.StartWave();
                     break;
 
                 //Wave 2 will go straight to combat

@@ -12,7 +12,13 @@ public class Bullet : MonoBehaviour
     public float _damage;
 
     [SerializeField]
+    private GameObject _shatter;
+    [SerializeField]
     private GameObject trail;
+
+    [SerializeField]
+    public bool isShrapnel = false;
+    public bool isTracer = false;
 
     [SerializeField]
     private bool isSticky = false;
@@ -21,8 +27,7 @@ public class Bullet : MonoBehaviour
     {
         //If the bullet hits anything thats not a player or a gate
         if(collision.gameObject.tag != "Player" && collision.gameObject.tag != "Gate" && collision.gameObject.tag != "Explosion" && collision.gameObject.tag != "Bullet")
-        {
-            
+        {            
             //Bullet sticks to object if it is sticky
             if (isSticky && explosion)
             {
@@ -38,7 +43,6 @@ public class Bullet : MonoBehaviour
 
                 StartCoroutine(TimerToExplosion());
             }
-        }
 
             else if (!isSticky && explosion)
                 Instantiate(explosion, gameObject.transform.position, explosion.transform.rotation);
@@ -50,8 +54,11 @@ public class Bullet : MonoBehaviour
             }
             */
 
-            if(!isSticky)
-                Destroy(gameObject);     
+            if (!isSticky)
+                Destroy(gameObject);
+        }
+
+                
     }
 
     public IEnumerator TimerToExplosion()

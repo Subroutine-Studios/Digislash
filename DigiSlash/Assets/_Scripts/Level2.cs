@@ -95,7 +95,7 @@ public class Level2 : MonoBehaviour
                 //Wave 0 will have dialogue before combat
                 case 0:
                     inDialogue = true;
-                    Debug.Log("CASE 0 inCombat: " + inCombat);
+                    Debug.Log("CASE 0 inCombat:  " + inCombat);
                     StartCoroutine(StartDialogue());
                     break;
 
@@ -108,11 +108,12 @@ public class Level2 : MonoBehaviour
 
                 //Wave 2 will go straight to combat
                 case 2:
-                    inDialogue = true;
+                    inCombat = true;
                     Debug.Log("CASE 2 inCombat:  " + inCombat);
-                    StartCoroutine(StartDialogue());
+                    _gameManager.StartWave();
                     break;
-                // all waves have been cleared
+                
+                 // all waves have been cleared
                 case 3:
                     inDialogue = true;
                     inCombat = false;

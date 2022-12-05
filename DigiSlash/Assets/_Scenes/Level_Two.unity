@@ -761,16 +761,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: Rocket
-  bulletSubTypeA: 
-  bulletSubTypeB: 
-  bulletForceA: 0
-  bulletForceB: 0
+  bulletSubTypeA: Nuclear
+  bulletSubTypeB: Napalm
+  bulletForceA: 7
+  bulletForceB: 9
   baseDmgA: 0
   baseDmgB: 0
-  rpsA: 0
-  rpsB: 0
-  prefabA: {fileID: 0}
-  prefabB: {fileID: 0}
+  rpsA: 0.5
+  rpsB: 1
+  prefabA: {fileID: 231403928987396763, guid: bbad21373d7d74a4fb1b1ec385e35fb8, type: 3}
+  prefabB: {fileID: 231403928987396763, guid: 8cf8079d432d2d54588d1813344ad34a, type: 3}
 --- !u!1 &307406024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,16 +1174,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: Bullet
-  bulletSubTypeA: 
-  bulletSubTypeB: 
-  bulletForceA: 0
-  bulletForceB: 0
-  baseDmgA: 0
-  baseDmgB: 0
-  rpsA: 0
-  rpsB: 0
-  prefabA: {fileID: 0}
-  prefabB: {fileID: 0}
+  bulletSubTypeA: Shrapnel
+  bulletSubTypeB: Tracer
+  bulletForceA: 10
+  bulletForceB: 12
+  baseDmgA: 10
+  baseDmgB: 12
+  rpsA: 10
+  rpsB: 10
+  prefabA: {fileID: 5249007127712439410, guid: fa3afddd22eace547ab550eef164dd02, type: 3}
+  prefabB: {fileID: 7017584043013824122, guid: ffc4b7f7e85b2154eaa62eeda362847f, type: 3}
 --- !u!1 &454113085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,15 +3276,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: Sticky
   bulletSubTypeA: Plague
-  bulletSubTypeB: 
-  bulletForceA: 10
-  bulletForceB: 0
-  baseDmgA: 0
-  baseDmgB: 0
+  bulletSubTypeB: Singularity
+  bulletForceA: 5
+  bulletForceB: 12
+  baseDmgA: 30
+  baseDmgB: 30
   rpsA: 4
-  rpsB: 0
+  rpsB: 4
   prefabA: {fileID: 231403928987396763, guid: db38dd5216fe95e478cf4a9d31cefed5, type: 3}
-  prefabB: {fileID: 0}
+  prefabB: {fileID: 231403928987396763, guid: 789be13299b5c014fb7997668e7184fa, type: 3}
 --- !u!1 &1231044318
 GameObject:
   m_ObjectHideFlags: 0
@@ -7745,22 +7745,17 @@ MonoBehaviour:
   dialogueScenes:
   - _sceneName: Wave 1 Dialogue
     sentences:
-    - Heads up! Sensors have detected some viruses.
-    - "We\u2019ve managed to find out what type of viruses they are."
-    - It seems to be a hoard of legions and some few trespasser viruses.
-    - These legion viruses are slow and limber but beware!
-    - Killing them splits them into many mini viruses.
-    - The trespassers on the other hand are hard to spot.
-    - "They will try to target you before going for the fort.\r"
-    - Take them down with your rockets!
+    - "Congratulations! You\u2019ve been elevated."
+    - You can swap types between the same bullet.
+    - 'Each type has their own special properties, use them to increase your arsenal
+      against the viruses. '
+    - "Incoming viruses on the way!\r"
     highlight: {fileID: 0}
   - _sceneName: Wave 2 Dialogue
     sentences:
-    - Hold up! A new type of virus has been detected.
-    - It seems to be a hoard of worms have appeared with the other viruses.
-    - Beware! These worm viruses are fast!
-    - You have to shoot them 25 times to eliminate them.
-    - Take them down before they attack the fort!
+    - Sensors have spotted a new type of virus. Look out!
+    - "These phalanx seem to be the durable type able to block out damage for a while
+      when hit.\r"
     highlight: {fileID: 0}
   - _sceneName: Wave 3 Dialogue
     sentences:
@@ -7768,8 +7763,9 @@ MonoBehaviour:
     highlight: {fileID: 0}
   - _sceneName: Cleared Level
     sentences:
-    - Congratulations! You have slained the viruses!
-    - Press the Enter Key to proceed to the next level.
+    - "It seems you\u2019re ready to be elevated once again. Let\u2019s take you
+      to the forge."
+    - Press Enter to continue.
     highlight: {fileID: 0}
 --- !u!114 &1530865450
 MonoBehaviour:
@@ -9037,15 +9033,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[0].numWorms
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[1].numWorms
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[2].numWorms
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[3].numWorms
@@ -9053,7 +9049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[0].numLegions
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[0].spawnDelay
@@ -9061,7 +9057,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[1].numLegions
-      value: 5
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
+      propertyPath: _waves.Array.data[1].numPhalanx
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[1].spawnDelay
@@ -9069,7 +9069,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[2].numLegions
-      value: 14
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
+      propertyPath: _waves.Array.data[2].numPhalanx
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[2].spawnDelay
@@ -9085,15 +9089,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[0].numTrespassers
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[1].numTrespassers
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[2].numTrespassers
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[3].numTrespassers

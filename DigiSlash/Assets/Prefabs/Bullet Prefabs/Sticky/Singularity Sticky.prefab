@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 231403928987396763}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0.14901, y: 0.01442, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1.2}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,6 +102,7 @@ MonoBehaviour:
   explosion: {fileID: 5898079960471814859, guid: 9732b531922a849429b95b9940eb325d, type: 3}
   _damage: 30
   trail: {fileID: 0}
+  isShrapnel: 0
   isSticky: 1
 --- !u!70 &-5358384990441661419
 CapsuleCollider2D:
@@ -116,8 +117,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.02}
-  m_Size: {x: 0.7, y: 0.2}
+  m_Offset: {x: -0.05, y: -0.03}
+  m_Size: {x: 2, y: 0.65}
   m_Direction: 1
 --- !u!50 &-7231000447030331017
 Rigidbody2D:

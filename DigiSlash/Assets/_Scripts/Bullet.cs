@@ -15,6 +15,9 @@ public class Bullet : MonoBehaviour
     private GameObject trail;
 
     [SerializeField]
+    public bool isShrapnel = true;
+
+    [SerializeField]
     private bool isSticky = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,7 +41,6 @@ public class Bullet : MonoBehaviour
 
                 StartCoroutine(TimerToExplosion());
             }
-        }
 
             else if (!isSticky && explosion)
                 Instantiate(explosion, gameObject.transform.position, explosion.transform.rotation);
@@ -50,8 +52,11 @@ public class Bullet : MonoBehaviour
             }
             */
 
-            if(!isSticky)
-                Destroy(gameObject);     
+            if (!isSticky)
+                Destroy(gameObject);
+        }
+
+                
     }
 
     public IEnumerator TimerToExplosion()

@@ -8,7 +8,6 @@ public class Trespasser : MonoBehaviour
     private EnemyTracing _enemyTracer;
     public float _health = 40f;
 
-    [SerializeField]
     private float _explosionCooldown = 0f;
 
     private bool dead = false;
@@ -17,13 +16,15 @@ public class Trespasser : MonoBehaviour
     [SerializeField]
     private GameObject plague;
 
+    private float fade = 0;
+    private bool fadeIn = true;
+
     // Start is called before the first frame update
     void Start()
     {
         _enemyTracer._AIDestinationTarget.target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         _enemyTracer._target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        StartCoroutine("TrespasserFlickerRoutine");
     }
 
     // Update is called once per frame
@@ -45,8 +46,42 @@ public class Trespasser : MonoBehaviour
             _explosionCooldown += Time.deltaTime;
         }
 
+        if(fadeIn)
+        {
+            fade += Time.deltaTime / 2f;
+            if (fade >= 1)
+            {
+                fade = 1;
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, fade);
+                fadeIn = false;
+            }
 
-       
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, fade);
+            }
+                
+        }
+
+        else
+        {
+            fade -= Time.deltaTime / 2f;
+            if (fade <= 0)
+            {
+                fade = 0;
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, fade);
+                fadeIn = true;
+            }
+
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, fade);
+            }
+        }
+            
+
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -133,7 +168,7 @@ public class Trespasser : MonoBehaviour
 
         while (!dead)
         {
-      
+            
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 0);
             yield return new WaitForSeconds(2f);
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 255f);

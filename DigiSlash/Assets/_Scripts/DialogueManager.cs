@@ -21,7 +21,7 @@ public class DialogueManager : MonoBehaviour
     private GameObject _dialogueBox;
 
 
-    private int _sceneIndex = 0;
+    public int _sceneIndex = 0;
     private int _sentenceIndex = -1;
     private int _numSentences;
 

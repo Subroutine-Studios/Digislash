@@ -242,3 +242,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyTracer: {fileID: 6414426566571331529}
   _health: 500
+  plague: {fileID: 5898079960471814859, guid: e6c300c8b9789ef40a19272766d30471, type: 3}

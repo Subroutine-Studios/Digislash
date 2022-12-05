@@ -243,3 +243,4 @@ MonoBehaviour:
   _enemyTracer: {fileID: -308093225303561697}
   _health: 40
   _explosionCooldown: 0
+  plague: {fileID: 5898079960471814859, guid: e6c300c8b9789ef40a19272766d30471, type: 3}

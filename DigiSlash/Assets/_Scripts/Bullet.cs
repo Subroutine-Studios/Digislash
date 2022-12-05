@@ -38,7 +38,6 @@ public class Bullet : MonoBehaviour
 
                 StartCoroutine(TimerToExplosion());
             }
-        }
 
             else if (!isSticky && explosion)
                 Instantiate(explosion, gameObject.transform.position, explosion.transform.rotation);
@@ -50,8 +49,11 @@ public class Bullet : MonoBehaviour
             }
             */
 
-            if(!isSticky)
-                Destroy(gameObject);     
+            if (!isSticky)
+                Destroy(gameObject);
+        }
+
+                
     }
 
     public IEnumerator TimerToExplosion()

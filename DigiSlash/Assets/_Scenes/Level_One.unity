@@ -7696,13 +7696,14 @@ MonoBehaviour:
   - _sceneName: Wave 1 Dialogue
     sentences:
     - Heads up! Sensors have detected some viruses.
-    - "We\u2019ve managed to find out what type of viruses they are."
+    - "We\u2019ve managed to find out what type of viruses they are. Move around
+      with the WASD or the arrow keys."
     - It seems to be a hoard of legions and some few trespasser viruses.
     - These legion viruses are slow and limber but beware!
     - Killing them splits them into many mini viruses.
     - The trespassers on the other hand are hard to spot.
     - "They will try to target you before going for the fort.\r"
-    - Take them down with your rockets!
+    - Take them down with your rockets by clicking the left mouse button!
     highlight: {fileID: 0}
   - _sceneName: Wave 2 Dialogue
     sentences:

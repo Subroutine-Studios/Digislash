@@ -5533,7 +5533,7 @@ MonoBehaviour:
 '
     - "Although this halves the equipment\u2019s fire rate, but that\u2019s what
       Rapid-fire is for to mitigate that downside. \n"
-    - 'This gun has been built with Rockets  for ammunition.
+    - 'This gun has been built with Rockets for ammunition.
 
 '
     highlight: {fileID: 581832331}
@@ -5830,7 +5830,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 733009670}
   m_HandleRect: {fileID: 733009669}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

@@ -141,3 +141,4 @@ MonoBehaviour:
   trail: {fileID: 3199470463874835064, guid: d6ec7ab28b312324f8259c568b71d0f7, type: 3}
   isShrapnel: 1
   isSticky: 0
+  isShrapnel: 0

@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0b90ba0c218608741ac5fc3b0cc3b168, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.37358493, g: 1, b: 0.9769151, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   explosion: {fileID: 5898079960471814859, guid: 5df6d392f2b607141b95d71197a7b877, type: 3}
   _damage: 0
   trail: {fileID: 0}
+  isSticky: 0
 --- !u!70 &-5358384990441661419
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -16,8 +16,7 @@ public class Story : MonoBehaviour
 
     //Dialogue first
     private bool inDialogue = true;
-    [SerializeField]
-    private GameObject orbImage;
+
 
    
 
@@ -27,7 +26,6 @@ public class Story : MonoBehaviour
         //Start talking about the tutorial/story
         StartCoroutine(StartDialogue());
 
-        orbImage.gameObject.SetActive(false);
     }
 
 
@@ -36,24 +34,8 @@ public class Story : MonoBehaviour
   
         if (inDialogue && _dialogueManager.done) 
         {
-            inDialogue = false;
-            _dialogueManager.done = false;
-
-            orbImage.gameObject.SetActive(true);
-            Debug.Log("Orb Image " + orbImage.gameObject.activeSelf);
-
-            StartCoroutine(StartDialogue());
-
-           // Debug.Log("dialogue manager " + _dialogueManager.done);
-        }
-
-        if (_dialogueManager.done)
-        {
-            // Load story build phase
             SceneManager.LoadScene(2);
-
         }
-
 
     }
 

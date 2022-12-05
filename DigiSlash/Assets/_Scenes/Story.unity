@@ -782,7 +782,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueManager: {fileID: 1530865450}
-  orbImage: {fileID: 1925061883}
 --- !u!1 &1160759767
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,7 +5061,7 @@ MonoBehaviour:
     - 'Welcome to the Fort!
 
 '
-    - 'Your job is to defend it from the viruses trying to destroy the fort.
+    - 'Your job is to defend it from the Viruses trying to destroy the Fort.
 
 '
     - 'You will be equipped with different technologies to deal with various types
@@ -5072,16 +5071,9 @@ MonoBehaviour:
     - 'But be aware that your equipment is not a one stop shop for all types of enemies '
     - 'You must learn their various weaknesses and use your wit to adapt and defeat
       the enemies. '
-    - Some viruses will target you and try to remove you from the system, leaving
+    - Some Viruses will target you and try to remove you from the system, leaving
       the fort undefended!
     highlight: {fileID: 0}
-  - _sceneName: Build
-    sentences:
-    - Here! Have your first piece of equipment.
-    - 'It''s been custom modded to fire faster than usual and its bullets impossible
-      to react to! '
-    - "It\u2019s been equipped with extra explosive rockets. \r\n"
-    highlight: {fileID: 601664413}
 --- !u!114 &1530865450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5098,6 +5090,7 @@ MonoBehaviour:
   _textObj: {fileID: 454113087}
   _continueText: {fileID: 1162314796}
   _dialogueBox: {fileID: 1514356014}
+  _sceneIndex: 0
   _typingSpeed: 0.05
   done: 0
   soundEffect: {fileID: 1530865448}

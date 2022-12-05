@@ -1113,12 +1113,12 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.data[0]
       value: 
-      objectReference: {fileID: 1169856023}
+      objectReference: {fileID: 443457909}
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.data[1]
       value: 
@@ -2816,7 +2816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Sticky
+  m_Text: 'Sticky [3]
 
 '
 --- !u!222 &1152369492
@@ -3366,7 +3366,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Rocket '
+  m_Text: Rocket [2]
 --- !u!222 &1279155073
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7551,7 +7551,7 @@ MonoBehaviour:
   - _sceneName: Wave 1 Dialogue
     sentences:
     - "Congratulations! You\u2019ve been elevated."
-    - You can swap types between the same bullet.
+    - You can swap types between the same bullet by pressing the [R] key.
     - 'Each type has their own special properties, use them to increase your arsenal
       against the viruses. '
     - "Incoming viruses on the way!\r"
@@ -8078,7 +8078,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Bullet '
+  m_Text: Bullet [1]
 --- !u!222 &1652311797
 CanvasRenderer:
   m_ObjectHideFlags: 0

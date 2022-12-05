@@ -765,7 +765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: Rocket
   bulletSubTypeA: Nuclear
-  bulletSubTypeB: Napalm
+  bulletSubTypeB: 
   bulletForceA: 7
   bulletForceB: 9
   baseDmgA: 0
@@ -773,7 +773,7 @@ MonoBehaviour:
   rpsA: 0.5
   rpsB: 1
   prefabA: {fileID: 231403928987396763, guid: bbad21373d7d74a4fb1b1ec385e35fb8, type: 3}
-  prefabB: {fileID: 231403928987396763, guid: 8cf8079d432d2d54588d1813344ad34a, type: 3}
+  prefabB: {fileID: 0}
 --- !u!1 &307406024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,12 +1089,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.data[0]
       value: 
-      objectReference: {fileID: 1169856023}
+      objectReference: {fileID: 443457909}
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.data[1]
       value: 
@@ -1205,7 +1205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: Bullet
   bulletSubTypeA: Shrapnel
-  bulletSubTypeB: Tracer
+  bulletSubTypeB: 
   bulletForceA: 10
   bulletForceB: 12
   baseDmgA: 10
@@ -1213,7 +1213,7 @@ MonoBehaviour:
   rpsA: 10
   rpsB: 10
   prefabA: {fileID: 5249007127712439410, guid: fa3afddd22eace547ab550eef164dd02, type: 3}
-  prefabB: {fileID: 7017584043013824122, guid: ffc4b7f7e85b2154eaa62eeda362847f, type: 3}
+  prefabB: {fileID: 0}
 --- !u!1 &454113085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,9 +1420,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Sticky
-
-'
+  m_Text: Sticky [3]
 --- !u!222 &460024073
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2515,7 +2513,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Bullet '
+  m_Text: Bullet [1]
 --- !u!222 &882558298
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2595,7 +2593,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Rocket '
+  m_Text: Rocket [2]
 --- !u!222 &917771132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7793,6 +7791,9 @@ MonoBehaviour:
   - _sceneName: Wave 2 Dialogue
     sentences:
     - Hold up! A new type of virus has been detected.
+    - 'You have now unlocked Shrapnel Bullets. Press [1] to equip Bullets.
+
+'
     - It seems to be a hoard of worms have appeared with the other viruses.
     - Beware! These worm viruses are fast!
     - You have to shoot them 25 times to eliminate them.
@@ -9206,15 +9207,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[0].numTrespassers
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[1].numTrespassers
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[2].numTrespassers
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[3].numTrespassers

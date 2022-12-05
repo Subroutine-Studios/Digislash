@@ -50,8 +50,10 @@ public class Level2 : MonoBehaviour
                 // go to Level 2
                 Debug.Log("Completed the waves");
                 StartCoroutine(StartDialogue());
-                if (Input.GetKeyDown(KeyCode.Return))
-                    SceneManager.LoadScene(4);
+
+                Debug.Log(" 1 LVL 2 Scene Index " + _dialogueManager._sceneIndex);
+                if (_dialogueManager._sceneIndex == 4)
+                    SceneManager.LoadScene(5);
             }
         }
 
@@ -108,7 +110,7 @@ public class Level2 : MonoBehaviour
 
                 //Wave 2 will go straight to combat
                 case 2:
-                    inCombat = true;
+                    inDialogue = true;
                     Debug.Log("CASE 2 inCombat:  " + inCombat);
                     _gameManager.StartWave();
                     break;
@@ -119,15 +121,12 @@ public class Level2 : MonoBehaviour
                     inCombat = false;
                     Debug.Log("All waves cleared.");
                     StartCoroutine(StartDialogue());
+                    // go to build phase
+                    Debug.Log(" 2 LVL 2 Scene Index " + _dialogueManager._sceneIndex);
+                    if (_dialogueManager._sceneIndex == 4)
+                        SceneManager.LoadScene(5);
                     break;
                     
-                    /* Switching to next level works. Will uncomment once all levels are accomplished/
-                     * 
-                    // go to build phase
-                    if (Input.GetKeyDown(KeyCode.Return))
-                        SceneManager.LoadScene(4);
-                    break;
-                    */
             }
 
         }

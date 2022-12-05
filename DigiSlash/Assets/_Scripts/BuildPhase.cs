@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class BuildPhase : MonoBehaviour
 {
@@ -28,6 +28,7 @@ public class BuildPhase : MonoBehaviour
 
     [SerializeField]
     private GameObject _equipTraitBtn;
+
 
     [SerializeField]
     private Text _traitEquippedText;
@@ -75,6 +76,8 @@ public class BuildPhase : MonoBehaviour
     private Player _player;
 
 
+
+
     void Start()
     {
       
@@ -114,6 +117,10 @@ public class BuildPhase : MonoBehaviour
 
     }
 
+    public void startLevelThree()
+    {
+        SceneManager.LoadScene(6);
+    }
 
 
     // On Click Methods for Bullet type selection

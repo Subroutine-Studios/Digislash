@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff76f14f861ab142a67fe17e6614c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _proceedBtn: {fileID: 0}
+  _proceedBtn: {fileID: 110797319}
   _bulletBtn: {fileID: 435902716}
   _rocketBtn: {fileID: 1763213581}
   _stickyBtn: {fileID: 401264887}
@@ -571,6 +571,7 @@ GameObject:
   - component: {fileID: 110797323}
   - component: {fileID: 110797322}
   - component: {fileID: 110797321}
+  - component: {fileID: 110797324}
   m_Layer: 5
   m_Name: Build_btn
   m_TagString: Untagged
@@ -642,7 +643,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 110797322}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 110797324}
+        m_TargetAssemblyTypeName: BuildPhase, Assembly-CSharp
+        m_MethodName: startLevelThree
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &110797322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,6 +694,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110797319}
   m_CullTransparentMesh: 1
+--- !u!114 &110797324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110797319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff76f14f861ab142a67fe17e6614c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _proceedBtn: {fileID: 110797319}
+  _bulletBtn: {fileID: 435902716}
+  _rocketBtn: {fileID: 1763213581}
+  _stickyBtn: {fileID: 401264887}
+  _multiShotBtn: {fileID: 1639607150}
+  _warpedBtn: {fileID: 906542618}
+  _rapidFireBtn: {fileID: 1320251610}
+  _equipTraitBtn: {fileID: 1412375521}
+  _traitEquippedText: {fileID: 517145746}
+  _bulletText: {fileID: 2069473793}
+  _weap1Btn: {fileID: 965194706}
+  _weap2Btn: {fileID: 105057189}
+  _fcBulletTypeText: {fileID: 29226995}
+  _fcSubTypeText: {fileID: 1613436260}
+  _fcBaseDmgText: {fileID: 2063585485}
+  _fcRpsText: {fileID: 1275811725}
+  _fcTraitText: {fileID: 1865642243}
+  _traitDescText: {fileID: 1094112182}
+  _prefabA: {fileID: 0}
+  _prefabB: {fileID: 0}
 --- !u!1 &132895236
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,9 +2534,9 @@ RectTransform:
   m_Father: {fileID: 1721118288}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &906542620
@@ -2600,7 +2645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff76f14f861ab142a67fe17e6614c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _proceedBtn: {fileID: 0}
+  _proceedBtn: {fileID: 110797319}
   _bulletBtn: {fileID: 435902716}
   _rocketBtn: {fileID: 1763213581}
   _stickyBtn: {fileID: 401264887}
@@ -2953,7 +2998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff76f14f861ab142a67fe17e6614c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _proceedBtn: {fileID: 0}
+  _proceedBtn: {fileID: 110797319}
   _bulletBtn: {fileID: 435902716}
   _rocketBtn: {fileID: 1763213581}
   _stickyBtn: {fileID: 401264887}
@@ -3920,9 +3965,9 @@ RectTransform:
   m_Father: {fileID: 1721118288}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -85}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1320251612
@@ -4031,7 +4076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff76f14f861ab142a67fe17e6614c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _proceedBtn: {fileID: 0}
+  _proceedBtn: {fileID: 110797319}
   _bulletBtn: {fileID: 435902716}
   _rocketBtn: {fileID: 1763213581}
   _stickyBtn: {fileID: 401264887}
@@ -4131,67 +4176,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343553248}
   m_CullTransparentMesh: 1
---- !u!1001 &1395300488
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0007
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7905790047762479762, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8554171654745379435, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8554171654745379435, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
 --- !u!1 &1399766254
 GameObject:
   m_ObjectHideFlags: 0
@@ -4407,7 +4391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff76f14f861ab142a67fe17e6614c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _proceedBtn: {fileID: 0}
+  _proceedBtn: {fileID: 110797319}
   _bulletBtn: {fileID: 435902716}
   _rocketBtn: {fileID: 1763213581}
   _stickyBtn: {fileID: 401264887}
@@ -5038,9 +5022,9 @@ RectTransform:
   m_Father: {fileID: 1721118288}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639607152
@@ -5149,7 +5133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff76f14f861ab142a67fe17e6614c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _proceedBtn: {fileID: 0}
+  _proceedBtn: {fileID: 110797319}
   _bulletBtn: {fileID: 435902716}
   _rocketBtn: {fileID: 1763213581}
   _stickyBtn: {fileID: 401264887}

@@ -49,8 +49,8 @@ public class Story : MonoBehaviour
 
         if (_dialogueManager.done)
         {
-            Debug.Log("Load Level 1");
-            SceneManager.LoadScene("Level_One");
+            // Load story build phase
+            SceneManager.LoadScene(2);
 
         }
 

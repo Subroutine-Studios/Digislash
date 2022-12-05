@@ -132,7 +132,7 @@ public class DialogueManager : MonoBehaviour
 
             done = true;
 
-
+            Debug.Log("scene index dialogue " + _sceneIndex);
 
             //IMPORTANT
             //IMPORTANT

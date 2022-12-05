@@ -50,7 +50,8 @@ public class Level1 : MonoBehaviour
                 // go to Level 2
                 Debug.Log("Completed the waves");
                 StartCoroutine(StartDialogue());
-                if (Input.GetKeyDown(KeyCode.Return))
+
+                   if (_dialogueManager._sceneIndex == 4)
                     SceneManager.LoadScene(4);
             }
         }
@@ -118,15 +119,11 @@ public class Level1 : MonoBehaviour
                     inCombat = false;
                     Debug.Log("All waves cleared.");
                     StartCoroutine(StartDialogue());
+
+                    if ( _dialogueManager._sceneIndex == 4)
+                        SceneManager.LoadScene(4);
                     break;
                     
-                    /* Switching to next level works. Will uncomment once all levels are accomplished/
-                     * 
-                    // go to level 2
-                    if (Input.GetKeyDown(KeyCode.Return))
-                        SceneManager.LoadScene(3);
-                    break;
-                    */
             }
 
         }

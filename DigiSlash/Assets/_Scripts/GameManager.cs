@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     void  GameOverSequence()
     {
         _isGameOver = true;
-        _spawnManager.doneSpawning = false;
+        _spawnManager.doneSpawning = true;
         _uiManager.gameOverTxt.gameObject.SetActive(true);
         _uiManager.restartLvlTxt.gameObject.SetActive(true);
         StartCoroutine(GameOverFlickerRoutine());

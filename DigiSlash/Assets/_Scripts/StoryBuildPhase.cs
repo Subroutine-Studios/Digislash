@@ -37,8 +37,8 @@ public class StoryBuildPhase : MonoBehaviour
         // last scene is done , load level 1
         if (_dialogueManager.done && _dialogueManager._sceneIndex == 6)
         {
-        
-            SceneManager.LoadScene("Level_One");
+            // Load level one
+            SceneManager.LoadScene(3);
         }
 
         else if (_dialogueManager.done)

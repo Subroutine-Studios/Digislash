@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4723938342033477558}
   m_Layer: 0
   m_Name: Shrapnel
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,4 +139,5 @@ MonoBehaviour:
   explosion: {fileID: 0}
   _damage: 12
   trail: {fileID: 0}
+  isShrapnel: 1
   isSticky: 0

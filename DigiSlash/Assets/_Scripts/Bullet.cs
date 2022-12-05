@@ -15,6 +15,9 @@ public class Bullet : MonoBehaviour
     private GameObject trail;
 
     [SerializeField]
+    private bool isShrapnel = true;
+
+    [SerializeField]
     private bool isSticky = false;
 
     private void OnTriggerEnter2D(Collider2D collision)

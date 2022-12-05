@@ -13,8 +13,6 @@ public class Bullet : MonoBehaviour
 
     [SerializeField]
     private GameObject _shatter;
-    [SerializeField]
-    private GameObject trail;
 
     [SerializeField]
     public bool isShrapnel = false;

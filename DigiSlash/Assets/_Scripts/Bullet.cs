@@ -17,6 +17,9 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private bool isSticky = false;
 
+    [SerializeField]
+    private bool isShrapnel = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //If the bullet hits anything thats not a player or a gate

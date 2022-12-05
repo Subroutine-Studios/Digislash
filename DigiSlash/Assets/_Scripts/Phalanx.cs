@@ -9,7 +9,7 @@ public class Phalanx : MonoBehaviour
     
     public float _health = 500f;
 
-    private float _explosionCooldown = 0f;
+    private float _damageCooldown = 0f;
 
     private bool dead = false;
 
@@ -33,8 +33,6 @@ public class Phalanx : MonoBehaviour
         _enemyTracer._AIDestinationTarget.target = _gate;
         _enemyTracer._target = _gate;
 
-        // start timer
-        StartCoroutine(ProjectileImmunity());
 
     }
 
@@ -63,10 +61,10 @@ public class Phalanx : MonoBehaviour
             StartCoroutine(Death());
         }
 
-        //Recharge cool down to 0.2 secs
-        if (_explosionCooldown < 0.2f)
+        //Recharge damage down to 0.8 secs
+        if (_damageCooldown < 0.8f)
         {
-            _explosionCooldown += Time.deltaTime;
+            _damageCooldown += Time.deltaTime;
         }
     }
 
@@ -76,33 +74,21 @@ public class Phalanx : MonoBehaviour
         // If a bullet hits the enemy, deal dmg equal the the bullet dmg
         if (collision.gameObject.tag == "Bullet")
         {
-            if(!blockHits)
+            if(_damageCooldown >= 0.8f)
             {
                 _health -= collision.GetComponent<Bullet>()._damage;
+                _damageCooldown = 0;
             }
         }
 
     }
 
 
-    private IEnumerator ProjectileImmunity()
-    {
-        while(true)
-        {
-            blockHits = true; // IMMUNE
-            yield return new WaitForSeconds(0.8f);
-            blockHits = false;  // VULNERABLE
-            yield return new WaitForSeconds(2f);        
-
-        }   
-
-    }
-
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         //If an enemy stay inside an explosion while not immune, take dmg and start the explosion immunity timer
-        if (collision.gameObject.tag == "Explosion" && _explosionCooldown >= 0.2f)
+        if (collision.gameObject.tag == "Explosion" && _damageCooldown >= 0.8f)
         {
             _health -= collision.GetComponent<Explosion>()._damage;
 
@@ -117,7 +103,7 @@ public class Phalanx : MonoBehaviour
                 gameObject.GetComponent<Rigidbody2D>().AddForce(playerPos.normalized * 800f);
             }
 
-            _explosionCooldown = 0f;
+            _damageCooldown = 0f;
         }
     }
 

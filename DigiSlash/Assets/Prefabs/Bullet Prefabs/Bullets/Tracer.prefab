@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4213410127380742569}
   m_Layer: 0
   m_Name: Tracer
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,3 +140,4 @@ MonoBehaviour:
   _damage: 12
   trail: {fileID: 0}
   isSticky: 0
+  isShrapnel: 0

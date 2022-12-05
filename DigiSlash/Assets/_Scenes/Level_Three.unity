@@ -761,16 +761,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: Rocket
-  bulletSubTypeA: 
-  bulletSubTypeB: 
-  bulletForceA: 0
-  bulletForceB: 0
+  bulletSubTypeA: Nuclear
+  bulletSubTypeB: Napalm
+  bulletForceA: 7
+  bulletForceB: 9
   baseDmgA: 0
   baseDmgB: 0
-  rpsA: 0
-  rpsB: 0
-  prefabA: {fileID: 0}
-  prefabB: {fileID: 0}
+  rpsA: 0.5
+  rpsB: 1
+  prefabA: {fileID: 231403928987396763, guid: bbad21373d7d74a4fb1b1ec385e35fb8, type: 3}
+  prefabB: {fileID: 231403928987396763, guid: 8cf8079d432d2d54588d1813344ad34a, type: 3}
 --- !u!1 &307406024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,16 +1174,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: Bullet
-  bulletSubTypeA: 
-  bulletSubTypeB: 
-  bulletForceA: 0
-  bulletForceB: 0
-  baseDmgA: 0
-  baseDmgB: 0
-  rpsA: 0
-  rpsB: 0
-  prefabA: {fileID: 0}
-  prefabB: {fileID: 0}
+  bulletSubTypeA: Shrapnel
+  bulletSubTypeB: Tracer
+  bulletForceA: 10
+  bulletForceB: 12
+  baseDmgA: 10
+  baseDmgB: 12
+  rpsA: 10
+  rpsB: 10
+  prefabA: {fileID: 5249007127712439410, guid: fa3afddd22eace547ab550eef164dd02, type: 3}
+  prefabB: {fileID: 7017584043013824122, guid: ffc4b7f7e85b2154eaa62eeda362847f, type: 3}
 --- !u!1 &454113085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,15 +3276,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: Sticky
   bulletSubTypeA: Plague
-  bulletSubTypeB: 
-  bulletForceA: 10
-  bulletForceB: 0
-  baseDmgA: 0
-  baseDmgB: 0
+  bulletSubTypeB: Singularity
+  bulletForceA: 5
+  bulletForceB: 12
+  baseDmgA: 30
+  baseDmgB: 30
   rpsA: 4
-  rpsB: 0
+  rpsB: 4
   prefabA: {fileID: 231403928987396763, guid: db38dd5216fe95e478cf4a9d31cefed5, type: 3}
-  prefabB: {fileID: 0}
+  prefabB: {fileID: 231403928987396763, guid: 789be13299b5c014fb7997668e7184fa, type: 3}
 --- !u!1 &1231044318
 GameObject:
   m_ObjectHideFlags: 0

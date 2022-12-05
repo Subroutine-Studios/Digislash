@@ -27,28 +27,32 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text weap2Txt;
     [SerializeField]
+    private Text weap3Txt;
+
+    [SerializeField]
     private Text weap1Subtype1Txt;
     [SerializeField]
     private Text weap1Subtype2Txt;
+
     [SerializeField]
     private Text weap2Subtype1Txt;
     [SerializeField]
     private Text weap2Subtype2Txt;
 
     [SerializeField]
+    private Text weap3Subtype1Txt;
+    [SerializeField]
+    private Text weap3Subtype2Txt;
+
+    [SerializeField]
     public Text gameOverTxt;
+
     [SerializeField]
     public Text restartLvlTxt;
     [SerializeField]
     public Text waveText;
 
 
-
-    void Start()
-    {
-        // Set weapon labels
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -57,24 +61,55 @@ public class UIManager : MonoBehaviour
         updateFortHp();
         updatePlayerHp();
 
-        // weapon index 0 - bullet ; 1 - rocket
+        resetHighlights();
 
-        if (player._weaponIndex == 0)
+        // Nuclear Equipped
+        if (player._currentWeapon.bullet == "Sticky" && player._isFirstSubtype == true)
         {
-            // highlight bullet
+            weap3Txt.color = new Color32(255, 255, 255, 255);
+            weap3Subtype1Txt.color = new Color32(255, 255, 255, 255);
+        } else if (player._currentWeapon.bullet == "Sticky" && player._isFirstSubtype == false)
+        {
+            weap3Txt.color = new Color32(255, 255, 255, 255);
+            weap3Subtype2Txt.color = new Color32(255, 255, 255, 255);
+        } else if (player._currentWeapon.bullet == "Bullet" && player._isFirstSubtype == true)
+        {
             weap1Txt.color = new Color32(255, 255, 255, 255);
-            weap2Txt.color = new Color32(255, 255, 255, 70);
-        }
-        else if(player._weaponIndex == 1)
+            weap1Subtype1Txt.color = new Color32(255, 255, 255, 255);
+        } else if (player._currentWeapon.bullet == "Bullet" && player._isFirstSubtype == false)
         {
-            // highlight rocket
+            weap1Txt.color = new Color32(255, 255, 255, 255);
+            weap1Subtype2Txt.color = new Color32(255, 255, 255, 255);
+        } else if(player._currentWeapon.bullet == "Rocket" && player._isFirstSubtype == true)
+        {
             weap2Txt.color = new Color32(255, 255, 255, 255);
-            weap1Txt.color = new Color32(255, 255, 255, 70); 
-
+            weap2Subtype1Txt.color = new Color32(255, 255, 255, 255);
+        } else if(player._currentWeapon.bullet == "Rocket" && player._isFirstSubtype == false)
+        {        
+            weap2Txt.color = new Color32(255, 255, 255, 255);
+            weap2Subtype2Txt.color = new Color32(255, 255, 255, 255);
         }
+
 
     }
 
+    // resets selected weapon
+    void resetHighlights()
+    {
+        weap1Txt.color = new Color32(255, 255, 255, 70);
+        weap2Txt.color = new Color32(255, 255, 255, 70);
+        weap3Txt.color = new Color32(255, 255, 255, 70);
+
+       weap1Subtype1Txt.color = new Color32(255, 255, 255, 70);
+       weap1Subtype2Txt.color = new Color32(255, 255, 255, 70);
+
+       weap2Subtype1Txt.color = new Color32(255, 255, 255, 70);
+       weap2Subtype2Txt.color = new Color32(255, 255, 255, 70);
+
+       weap3Subtype1Txt.color = new Color32(255, 255, 255, 70);
+       weap3Subtype2Txt.color = new Color32(255, 255, 255, 70);
+
+    }
 
 
     void updateFortHp()
@@ -89,7 +124,6 @@ public class UIManager : MonoBehaviour
         {
             fortFillImage.enabled = true;
         }
-
 
         float fillValue = fortHealth._leaks / 10f; // fort current health/ fort max health
 

@@ -420,7 +420,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 274192044}
   m_HandleRect: {fileID: 274192043}
   m_Direction: 2
-  m_Value: 1.0000004
+  m_Value: 1.0000002
   m_Size: 0.6135417
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5501,16 +5501,17 @@ MonoBehaviour:
   - _sceneName: Build
     sentences:
     - "Now let\u2019s go where your equipment is made.\r\n"
-    - 'Welcome to the forge, here is where your equipment is made. '
+    - Welcome to the Subroutine, here is where your equipment is made.
     highlight: {fileID: 0}
   - _sceneName: Bullets
     sentences:
-    - 'Now each equipment is able to use one type of ammunition: Rockets, bullets,
-      or sticky.
+    - 'Now each equipment is able to use one type of ammunition: Rockets, Bullets,
+      or Sticky.
 
 '
     - Each of these ammunition have their own sub-types that have different properties.
     - 'In the future, you would be allowed to freely swap between the sub-types. '
+    - 'This type of ammunition serves as inputs for your equipment, called Parameters. '
     - This increases the versatility of your equipment to fit the situation needed.
     highlight: {fileID: 341024126}
   - _sceneName: Traits
@@ -5520,8 +5521,9 @@ MonoBehaviour:
     highlight: {fileID: 1302704634}
   - _sceneName: Rapid-fire
     sentences:
-    - "Notice how the current equipment in the forge is being compiled with Instant
-      and Rapid-fire. \n"
+    - 'Notice how the current equipment in the Forge is being compiled with Rapid-fire.
+
+'
     - 'Rapid-fire allows the equipment to fire faster than it usually does, although
       at the cost of some of its damage.
 
@@ -5530,22 +5532,22 @@ MonoBehaviour:
 
 '
     - "Although this halves the equipment\u2019s fire rate, but that\u2019s what
-      rapid-fire is for to mitigate that downside. \n"
-    - 'This gun has been built with rockets for ammunition.
+      Rapid-fire is for to mitigate that downside. \n"
+    - 'This gun has been built with Rockets  for ammunition.
 
 '
     highlight: {fileID: 581832331}
   - _sceneName: Function
     sentences:
     - 'Take note that we currently have access to 2 rocket types: Napalm and Nuclear. '
-    - 'Notice that both types of rockets receive the benefits of the equipment.
+    - 'Notice that both types of Rockets receive the benefits of the equipment.
 
 '
     highlight: {fileID: 770374903}
   - _sceneName: Last
     sentences:
     - 'Hey nice, the equipment finished compiling. '
-    - "Have it as your first weapon, its currently equipped with the Nuclear rocket.
+    - "Have it as your first weapon, its currently equipped with the Nuclear Rocket.
       \n"
     - "You\u2019ll get to access the other types later when you get the permission
       to.\r\n\n"
@@ -5828,7 +5830,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 733009670}
   m_HandleRect: {fileID: 733009669}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

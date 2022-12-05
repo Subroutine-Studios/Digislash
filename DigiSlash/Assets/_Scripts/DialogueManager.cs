@@ -86,6 +86,10 @@ public class DialogueManager : MonoBehaviour
     //IMPORTANT: Game manager should call this function when the next scene should play
     public void NextSentence()
     {
+
+        Debug.Log("Scene Index " + _sceneIndex);
+
+
         //Show the dialogue box
         _dialogueBox.SetActive(true);
 

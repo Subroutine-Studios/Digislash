@@ -217,7 +217,6 @@ public class Player : MonoBehaviour
         GameObject bullet = Instantiate(prefab, fireLocation, _firePos.transform.rotation * Quaternion.Euler(0, 0, 90));
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(_firePos.transform.up * bulletForce, ForceMode2D.Impulse);
-        
 
         //If multishot feature is enabled, spawn two more bullets in diff angles
         if (_multiShot)

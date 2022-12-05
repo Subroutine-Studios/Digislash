@@ -7743,33 +7743,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueScenes:
-  - _sceneName: Wave 1 Dialogue
-    sentences:
-    - Heads up! Sensors have detected some viruses.
-    - "We\u2019ve managed to find out what type of viruses they are."
-    - It seems to be a hoard of legions and some few trespasser viruses.
-    - These legion viruses are slow and limber but beware!
-    - Killing them splits them into many mini viruses.
-    - The trespassers on the other hand are hard to spot.
-    - "They will try to target you before going for the fort.\r"
-    - Take them down with your rockets!
-    highlight: {fileID: 0}
-  - _sceneName: Wave 2 Dialogue
-    sentences:
-    - Hold up! A new type of virus has been detected.
-    - It seems to be a hoard of worms have appeared with the other viruses.
-    - Beware! These worm viruses are fast!
-    - You have to shoot them 25 times to eliminate them.
-    - Take them down before they attack the fort!
-    highlight: {fileID: 0}
   - _sceneName: Wave 3 Dialogue
     sentences:
-    - Looks like the final wave is arriving, ready up!
+    - It seems the hackers are getting desperate.
+    - "They\u2019re using every tool they have to try breaching our system."
+    - "Hold fast and we\u2019ll be safe for a while."
     highlight: {fileID: 0}
-  - _sceneName: Cleared Level
+  - _sceneName: Cleared Game
     sentences:
-    - Congratulations! You have slained the viruses!
-    - Press the Enter Key to proceed to the next level.
+    - Congratulations! You have slained all the viruses!
     highlight: {fileID: 0}
 --- !u!114 &1530865450
 MonoBehaviour:

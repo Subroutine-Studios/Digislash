@@ -102,6 +102,7 @@ MonoBehaviour:
   explosion: {fileID: 5898079960471814859, guid: 21de9600c6350cc47bcc0ef6fb54cca5, type: 3}
   _damage: 0
   trail: {fileID: 0}
+  isShrapnel: 0
   isSticky: 0
 --- !u!70 &-5358384990441661419
 CapsuleCollider2D:

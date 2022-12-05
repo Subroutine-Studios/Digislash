@@ -43,7 +43,7 @@ public class Phalanx : MonoBehaviour
     {
         float distanceFromPlayer = Vector2.Distance(_player.position, transform.position);
 
-        if(distanceFromPlayer < 4.5f)
+        if(distanceFromPlayer < 5f)
         {
             _enemyTracer._AIDestinationTarget.target = _player;
             _enemyTracer._target = _player;

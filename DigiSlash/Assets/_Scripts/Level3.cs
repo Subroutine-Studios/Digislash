@@ -25,7 +25,8 @@ public class Level3 : MonoBehaviour
     void Start()
     {
         //Start talking about the incoming enemies 
-        StartCoroutine(StartDialogue());
+        //StartCoroutine(StartDialogue());
+        _gameManager.StartWave();
     }
 
     // Update is called once per frame

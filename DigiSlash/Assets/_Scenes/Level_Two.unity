@@ -1059,7 +1059,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.data[0]
@@ -1072,7 +1072,7 @@ PrefabInstance:
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.data[2]
       value: 
-      objectReference: {fileID: 255784566}
+      objectReference: {fileID: 443457909}
     - target: {fileID: 8554171654745379438, guid: 593c25d38b9e0cd47bc688ce32d2bd01, type: 3}
       propertyPath: _weapons.Array.data[3]
       value: 
@@ -7783,6 +7783,7 @@ MonoBehaviour:
   _textObj: {fileID: 454113087}
   _continueText: {fileID: 1162314796}
   _dialogueBox: {fileID: 1514356014}
+  _sceneIndex: 0
   _typingSpeed: 0.05
   done: 0
   soundEffect: {fileID: 1530865448}

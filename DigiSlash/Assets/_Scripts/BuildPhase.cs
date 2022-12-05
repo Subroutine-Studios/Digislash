@@ -74,8 +74,11 @@ public class BuildPhase : MonoBehaviour
     // player
     private Player _player;
 
+
     void Start()
     {
+      
+
         // Weapon 1 is selected by default
         _selectedWeap = 0;
         _weapons = new Weapon[2];
@@ -84,11 +87,19 @@ public class BuildPhase : MonoBehaviour
         _weapons[1] = new Weapon("null", "null", "null", 0, 0, 0, 0, 0, 0, _prefabA, _prefabB);
 
         Debug.Log("Buld phase start: " + _weapons[_selectedWeap].bullet + " selected weapon : " + _selectedWeap);
+
+        // _player = GetComponent(
+
+        _player = GameObject.Find("Player").GetComponent<Player>();
+
+
+
+
     }
 
 
 
-    // CHANGE THIS
+
     // Update weapon array values
 
     public void updateWeaponList(string bullet, string bulletSubTypeA, string bulletSubTypeB, float bulletForceA, float bulletForceB, float baseDmgA, float baseDmgB, float rpsA, float rpsB, GameObject prefabA, GameObject prefabB)
@@ -211,6 +222,8 @@ public class BuildPhase : MonoBehaviour
             _traitEquippedText.text = "Trait equipped: Multishot";
             // update function
             _fcTraitText.text = "String trait = \"Multishot\"\nprint(\"+ 4 Projectile count (shoots 5 projectiles with a spread at a time), - Range\");\n\nreturn dmg;";
+
+            _player._multiShot = true;
         } 
         if(_selectedTrait == 1) // warped
         {
@@ -219,6 +232,8 @@ public class BuildPhase : MonoBehaviour
             _traitEquippedText.text = "Trait equipped: Warped";
             // update function
             _fcTraitText.text = "String trait = \"Warped\"\nprint(\"Bullets spawn from crosshair, 50 % fire rate\");\n\nreturn dmg;";
+
+            _player._warped = true;
         }
         
         if(_selectedTrait == 2) // rapidfire
@@ -228,15 +243,18 @@ public class BuildPhase : MonoBehaviour
             _traitEquippedText.text = "Trait equipped: Rapid-fire";
             // update function
             _fcTraitText.text = "String trait = \"Rapid-fire\"\nprint(\"+ 30% fire rate , -15 % damage\");\n\nreturn dmg;";
-         
 
+            _player._rapidFire = true;
         }
+
+
+        
 
     }
 
     public void updateFunctionScreen()
     {
-        //
+        
         _bulletText.text = "class " + _weapons[_selectedWeap].bullet;
 
         _fcBulletTypeText.text = "String bullet_type = " + _weapons[_selectedWeap].bullet;
@@ -244,12 +262,9 @@ public class BuildPhase : MonoBehaviour
         _fcBaseDmgText.text = "int base_Dmg = " + _weapons[_selectedWeap].baseDmgA.ToString();
         _fcRpsText.text = "int rps = " + _weapons[_selectedWeap].rpsA.ToString();
 
-        // Update trait screen
+     
         
     }
-
-
-   
 
 
 

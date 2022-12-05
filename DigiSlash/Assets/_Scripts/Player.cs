@@ -34,11 +34,11 @@ public class Player : MonoBehaviour
 
     //Features
     [SerializeField]
-    private bool _multiShot = false;
+    public static bool _multiShot = false;
     [SerializeField]
-    private bool _warped = false;
+    public static bool _warped = false;
     [SerializeField]
-    private bool _rapidFire = false;
+    public static bool _rapidFire = false;
 
     // Start is called before the first frame update
     void Start()

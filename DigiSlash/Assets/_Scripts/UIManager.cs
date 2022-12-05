@@ -109,9 +109,7 @@ public class UIManager : MonoBehaviour
        weap3Subtype1Txt.color = new Color32(255, 255, 255, 70);
        weap3Subtype2Txt.color = new Color32(255, 255, 255, 70);
 
-
     }
-
 
 
     void updateFortHp()
@@ -126,7 +124,6 @@ public class UIManager : MonoBehaviour
         {
             fortFillImage.enabled = true;
         }
-
 
         float fillValue = fortHealth._leaks / 10f; // fort current health/ fort max health
 

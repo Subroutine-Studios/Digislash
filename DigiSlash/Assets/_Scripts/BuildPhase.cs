@@ -86,15 +86,7 @@ public class BuildPhase : MonoBehaviour
         _weapons[0] = new Weapon("null", "null", "null", 0, 0, 0, 0, 0, 0, _prefabA, _prefabB);
         _weapons[1] = new Weapon("null", "null", "null", 0, 0, 0, 0, 0, 0, _prefabA, _prefabB);
 
-        Debug.Log("Buld phase start: " + _weapons[_selectedWeap].bullet + " selected weapon : " + _selectedWeap);
-
-        // _player = GetComponent(
-
-        _player = GameObject.Find("Player").GetComponent<Player>();
-
-
-
-
+        Debug.Log("Build phase start: " + _weapons[_selectedWeap].bullet + " selected weapon : " + _selectedWeap);
     }
 
 
@@ -223,7 +215,7 @@ public class BuildPhase : MonoBehaviour
             // update function
             _fcTraitText.text = "String trait = \"Multishot\"\nprint(\"+ 4 Projectile count (shoots 5 projectiles with a spread at a time), - Range\");\n\nreturn dmg;";
 
-            _player._multiShot = true;
+            Player._multiShot = true;
         } 
         if(_selectedTrait == 1) // warped
         {
@@ -233,7 +225,7 @@ public class BuildPhase : MonoBehaviour
             // update function
             _fcTraitText.text = "String trait = \"Warped\"\nprint(\"Bullets spawn from crosshair, 50 % fire rate\");\n\nreturn dmg;";
 
-            _player._warped = true;
+            Player._warped = true;
         }
         
         if(_selectedTrait == 2) // rapidfire
@@ -244,7 +236,7 @@ public class BuildPhase : MonoBehaviour
             // update function
             _fcTraitText.text = "String trait = \"Rapid-fire\"\nprint(\"+ 30% fire rate , -15 % damage\");\n\nreturn dmg;";
 
-            _player._rapidFire = true;
+            Player._rapidFire = true;
         }
 
 

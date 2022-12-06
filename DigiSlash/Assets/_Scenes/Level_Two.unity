@@ -7701,7 +7701,7 @@ MonoBehaviour:
     - Sensors have spotted a new type of Virus. Look out!
     - "These Phalanx seem to be the durable type able to block out damage for a while
       when hit.\r"
-    - ' To beat this enemy, try to swap betwwen your arsenal!'
+    - ' To beat this enemy, try to swap between your arsenal!'
     highlight: {fileID: 0}
   - _sceneName: Wave 3 Dialogue
     sentences:

@@ -7871,7 +7871,7 @@ MonoBehaviour:
   - _sceneName: Cleared Level
     sentences:
     - Congratulations! You have slained the viruses!
-    - Press the Enter Key to proceed to the next level.
+    - Press anything proceed to the next level.
     highlight: {fileID: 0}
 --- !u!114 &1530865450
 MonoBehaviour:

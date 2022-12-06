@@ -7698,9 +7698,10 @@ MonoBehaviour:
     highlight: {fileID: 0}
   - _sceneName: Wave 2 Dialogue
     sentences:
-    - Sensors have spotted a new type of virus. Look out!
-    - "These phalanx seem to be the durable type able to block out damage for a while
+    - Sensors have spotted a new type of Virus. Look out!
+    - "These Phalanx seem to be the durable type able to block out damage for a while
       when hit.\r"
+    - ' To beat this enemy, try to swap betwwen your arsenal!'
     highlight: {fileID: 0}
   - _sceneName: Wave 3 Dialogue
     sentences:
@@ -7708,7 +7709,8 @@ MonoBehaviour:
     highlight: {fileID: 0}
   - _sceneName: Cleared Level
     sentences:
-    - Cleared Level
+    - "It seems you\u2019re ready to be elevated once again."
+    - "Let\u2019s take you to the Forge. Press anything to continue.\n"
     highlight: {fileID: 0}
 --- !u!114 &1530865450
 MonoBehaviour:
@@ -9170,7 +9172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[1].numPhalanx
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[1].spawnDelay
@@ -9182,7 +9184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[2].numPhalanx
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[2].spawnDelay

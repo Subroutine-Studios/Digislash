@@ -16,6 +16,8 @@ public class Level1 : MonoBehaviour
     [SerializeField]
     private DialogueManager _dialogueManager;
 
+    public static int lastWave = -1;
+
     //Dialogue first
     private bool inDialogue = true;
 
@@ -26,6 +28,7 @@ public class Level1 : MonoBehaviour
     {
         //Start talking about the incoming enemies 
         StartCoroutine(StartDialogue());
+        _dialogueManager.groupsToSkip = lastWave;
     }
 
     // Update is called once per frame
@@ -40,6 +43,7 @@ public class Level1 : MonoBehaviour
             if (_gameManager._spawnManager.currentWave < 3)
             {
                 Debug.Log("Current Wave : " + _gameManager._spawnManager.currentWave);
+                lastWave = _gameManager._spawnManager.currentWave;
                 inCombat = true;
                 _gameManager.StartWave();
             }
@@ -61,6 +65,7 @@ public class Level1 : MonoBehaviour
         {
             inCombat = false;
             Debug.Log("isPlayerSuccessful " + _gameManager.isPlayerSuccessful + "  inCombat " + inCombat);
+
 
             /* Call dialogue manager if you need to say something at the next wave
              * 

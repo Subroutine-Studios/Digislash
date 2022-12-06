@@ -26,8 +26,7 @@ public class Player : MonoBehaviour
     public int _weaponIndex = 0;
     public bool _isFirstSubtype = true;
 
-    [SerializeField]
-    private bool _canShoot = true;
+    public bool _canShoot = false;
 
     private float _cooldown = 2;
 
@@ -65,6 +64,7 @@ public class Player : MonoBehaviour
 
 
             CalculateMovement();
+
             CalculateAim();
 
             if (Input.GetButton("Fire1") && _canShoot)

@@ -20,6 +20,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private GameObject _dialogueBox;
 
+    [SerializeField]
+    private GameObject _skipText;
+
 
     public int _sceneIndex = 0;
     private int _sentenceIndex = -1;
@@ -29,6 +32,8 @@ public class DialogueManager : MonoBehaviour
     private float _typingSpeed;
 
     public bool done = false;
+
+    public int groupsToSkip = -1;
 
 
     [SerializeField]
@@ -51,17 +56,38 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape) && _skipText.activeSelf)
+        {
+            soundEffect.Stop();
+            _dialogueBox.SetActive(false);
+            _skipText.SetActive(false);
+            if (_dialogue.dialogueScenes[_sceneIndex].highlight)
+            {
+                _dialogue.dialogueScenes[_sceneIndex].highlight.SetActive(false);
+            }
+
+            _sentenceIndex = -1;
+            _sceneIndex++;
+
+            if (_sceneIndex < _dialogue.dialogueScenes.Length)
+                _numSentences = _dialogue.dialogueScenes[_sceneIndex].sentences.Length;
+
+            done = true;
+        }
+
+        //If user presses ENTER, SPACE or left mouse click when it shows "ENTER", go to the next sentence
+        else if (_continueText.activeSelf && (Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))  )
+        {
+            NextSentence();
+        }
+
         //Show that you can press "ENTER" if display finished the sentence
-        if (_textDisplay == _currentSentence)
+        if (_textDisplay == _currentSentence && _dialogueBox.activeSelf)
         {
             _continueText.SetActive(true);
         }
 
-        //If user presses ENTER when it shows "ENTER", go to the next sentence
-        if (Input.GetKeyDown(KeyCode.Return) && _continueText.activeSelf)
-        {
-            NextSentence();
-        }
+        
 
         //The text object will display the sentence that is forming
         _textObj.text = _textDisplay;
@@ -92,6 +118,11 @@ public class DialogueManager : MonoBehaviour
 
         //Show the dialogue box
         _dialogueBox.SetActive(true);
+        if(_sceneIndex <= groupsToSkip)
+        {
+            //Enable
+            _skipText.SetActive(true);
+        }
 
         //Show the spotlight if there is one
         if (_dialogue.dialogueScenes[_sceneIndex].highlight)
@@ -119,6 +150,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             _dialogueBox.SetActive(false);
+            _skipText.SetActive(false);
             if (_dialogue.dialogueScenes[_sceneIndex].highlight)
             {
                 _dialogue.dialogueScenes[_sceneIndex].highlight.SetActive(false);

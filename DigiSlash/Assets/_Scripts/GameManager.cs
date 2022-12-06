@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         else if (_spawnManager.doneSpawning && _enemiesLeft <= 0 && !isPlayerSuccessful)
         {
             Debug.Log("SUCESS");
+            _player._canShoot = false;
             _spawnManager.currentWave++;
             isPlayerSuccessful = true;
         }
@@ -84,8 +85,9 @@ public class GameManager : MonoBehaviour
         //_uiManager.waveText.text = "Wave " + _spawnManager.currentWave;
         //_uiManager.waveText.gameObject.SetActive(true);
 
-        
+
         //Spawn enemies
+        _player._canShoot = true;
         _spawnManager.doneSpawning = false;
         _spawnManager.SpawnEnemies();
 
@@ -94,6 +96,7 @@ public class GameManager : MonoBehaviour
 
     void  GameOverSequence()
     {
+        _player._canShoot = false;
         _isGameOver = true;
         _spawnManager.doneSpawning = true;
         _uiManager.gameOverTxt.gameObject.SetActive(true);

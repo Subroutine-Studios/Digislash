@@ -107,12 +107,12 @@ public class Legion : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        int enemyCount = 10;
+        int enemyCount = 5;
 
 
         GameObject enemy = _enemySmallLegion;
 
-        while (enemyCount != 0)
+        while (enemyCount > 0)
         {
             Debug.Log("Enemy Count " + enemyCount);
          

@@ -223,6 +223,8 @@ public class BuildPhase : MonoBehaviour
             _fcTraitText.text = "String trait = \"Multishot\"\nprint(\"+ 4 Projectile count (shoots 5 projectiles with a spread at a time), - Range\");\n\nreturn dmg;";
 
             Player._multiShot = true;
+            Player._rapidFire = false;
+            Player._warped = false;
         } 
         if(_selectedTrait == 1) // warped
         {
@@ -232,6 +234,8 @@ public class BuildPhase : MonoBehaviour
             // update function
             _fcTraitText.text = "String trait = \"Warped\"\nprint(\"Bullets spawn from crosshair, 50 % fire rate\");\n\nreturn dmg;";
 
+            Player._multiShot = false;
+            Player._rapidFire = false;
             Player._warped = true;
         }
         
@@ -243,7 +247,9 @@ public class BuildPhase : MonoBehaviour
             // update function
             _fcTraitText.text = "String trait = \"Rapid-fire\"\nprint(\"+ 30% fire rate , -15 % damage\");\n\nreturn dmg;";
 
+            Player._multiShot = false;
             Player._rapidFire = true;
+            Player._warped = false;
         }
 
 

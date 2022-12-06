@@ -9242,7 +9242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[0].numLegions
-      value: 12
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[0].spawnDelay
@@ -9258,7 +9258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[2].numLegions
-      value: 14
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7039419683156293102, guid: 61e1981f7170f2e49b21e76c45612511, type: 3}
       propertyPath: _waves.Array.data[2].spawnDelay

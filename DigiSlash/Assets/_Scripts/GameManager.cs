@@ -74,7 +74,12 @@ public class GameManager : MonoBehaviour
 
     void RestartLevel() // player restarts level if they are dead
     {
-        SceneManager.LoadScene(_currentScene.name);
+        int buildIndex = _currentScene.buildIndex;
+
+        if (buildIndex != 6) // checks if level is not Level 3
+            SceneManager.LoadScene(_currentScene.name);
+        else
+            SceneManager.LoadScene(5); // return to build phase
     }
 
     public void StartWave()

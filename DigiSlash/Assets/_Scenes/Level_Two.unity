@@ -7710,7 +7710,7 @@ MonoBehaviour:
   - _sceneName: Cleared Level
     sentences:
     - "It seems you\u2019re ready to be elevated once again."
-    - "Let\u2019s take you to the Forge. Press anything to continue.\n"
+    - "Let\u2019s take you to the Subroutine. Press anything to continue.\n"
     highlight: {fileID: 0}
 --- !u!114 &1530865450
 MonoBehaviour:
